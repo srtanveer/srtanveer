@@ -46,7 +46,7 @@ export default function Home() {
             <div className="md:flex-shrink-0">
               <div className="relative w-64 h-64 md:w-80 md:h-80">
                 <Image
-                  src="/images/profile.jpg"
+                  src="/images/profile-photo.jpg"
                   alt="MD SHOWAIB RAHMAN TANVEER"
                   fill
                   className="rounded-full object-cover shadow-2xl"
