@@ -46,12 +46,12 @@ export default function Home() {
             <div className="md:flex-shrink-0">
               <div className="relative w-64 h-64 md:w-80 md:h-80">
                 <Image
-                  src="/images/profile-photo.jpg"
+                  src="/profile-photo.jpg"
                   alt="MD SHOWAIB RAHMAN TANVEER"
-                  fill
-                  className="rounded-full object-cover shadow-2xl"
+                  width={320}
+                  height={320}
+                  className="rounded-full object-cover shadow-2xl w-full h-full"
                   priority
-                  sizes="(max-width: 768px) 256px, 320px"
                 />
               </div>
             </div>
