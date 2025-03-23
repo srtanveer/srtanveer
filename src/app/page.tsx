@@ -24,23 +24,37 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center"
+            className="flex flex-col md:flex-row items-center justify-between gap-12"
           >
-            <h1 className="text-4xl sm:text-6xl font-bold mb-6">
-              Hi, I'm <span className="text-primary-600 dark:text-primary-400">MD SHOWAIB RAHMAN TANVEER</span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-4">
-              Engineering Student | Computer Science
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              To obtain a challenging role in the technology industry, where I can utilize my passion for learning about emerging technologies and apply my technical skills to create innovative solutions.
-            </p>
-            <a
-              href="#contact"
-              className="inline-block bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-8 rounded-lg transition-colors"
-            >
-              Get in Touch
-            </a>
+            <div className="text-center md:text-left md:flex-1">
+              <h1 className="text-4xl sm:text-6xl font-bold mb-6">
+                Hi, I'm <span className="text-primary-600 dark:text-primary-400">MD SHOWAIB RAHMAN TANVEER</span>
+              </h1>
+              <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-4">
+                Engineering Student | Computer Science
+              </p>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
+                To obtain a challenging role in the technology industry, where I can utilize my passion for learning about emerging technologies and apply my technical skills to create innovative solutions.
+              </p>
+              <a
+                href="#contact"
+                className="inline-block bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-8 rounded-lg transition-colors"
+              >
+                Get in Touch
+              </a>
+            </div>
+            <div className="md:flex-shrink-0">
+              <div className="relative w-64 h-64 md:w-80 md:h-80">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="MD SHOWAIB RAHMAN TANVEER"
+                  fill
+                  className="rounded-full object-cover shadow-2xl"
+                  priority
+                  sizes="(max-width: 768px) 256px, 320px"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -239,9 +253,8 @@ export default function Home() {
           <div className="max-w-xl mx-auto">
             <div className="text-center mb-8">
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                C/O Md. Abul Kalem<br />
                 HN-1779, Road-09, Medinabag, Rayerbag Kadamtoli Dhaka-1236<br />
-                Cell: 01616-90440, 0164-393-2243<br />
+                Cell: 01569-104401, 0164-333-2243<br />
                 Email: srtanveer.cse@gmail.com
               </p>
               <div className="flex justify-center space-x-6">
