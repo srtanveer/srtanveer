@@ -32,7 +32,7 @@ const config: Config = {
       },
     },
   },
-  darkMode: 'media',
   plugins: [],
 }
+
 export default config 
