@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       {
         url: '/tab-icon-copy.jpg',
         sizes: '32x32',
-        type: 'image/jpeg'
+        type: 'image/jpg'
       },
       {
         url: '/icon.png',

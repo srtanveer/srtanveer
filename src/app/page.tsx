@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { FormEvent } from 'react';
 import Image from 'next/image';
+import Skills from '@/components/Skills';
 
 export default function Home() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -177,51 +178,7 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">Skills & Certifications</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div>
-              <h3 className="text-xl font-semibold mb-6">Technical Skills</h3>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  'Leadership',
-                  'Communication',
-                  'Problem Solving',
-                  'Organizing & Management',
-                  'Graphics Design',
-                  'Web Development'
-                ].map((skill) => (
-                  <div
-                    key={skill}
-                    className="bg-white dark:bg-gray-800 rounded-lg p-4 text-center shadow-sm"
-                  >
-                    <span className="font-medium">{skill}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-6">Certifications</h3>
-              <div className="space-y-4">
-                {[
-                  'Workshop on Python Programming in a Pragmatic Approach',
-                  'Cholera Vaccination',
-                  'JavaScript Algorithms and Data Structures',
-                  'Responsive Web Design'
-                ].map((cert) => (
-                  <div
-                    key={cert}
-                    className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm"
-                  >
-                    <span className="font-medium">{cert}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Skills />
 
       {/* Leadership Section */}
       <section id="leadership" className="py-20 bg-white dark:bg-gray-800">
