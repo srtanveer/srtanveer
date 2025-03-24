@@ -11,7 +11,12 @@ import {
   FaDatabase,
   FaPython,
   FaJava,
-  FaCuttlefish
+  FaCuttlefish,
+  FaUsers,
+  FaLightbulb,
+  FaChartLine,
+  FaPalette,
+  FaCode
 } from 'react-icons/fa';
 import { 
   SiTailwindcss, 
@@ -21,7 +26,7 @@ import {
   SiExpress
 } from 'react-icons/si';
 
-const skills = [
+const technicalSkills = [
   { name: 'HTML5', icon: FaHtml5, color: '#E34F26', level: 90 },
   { name: 'CSS3', icon: FaCss3Alt, color: '#264DE4', level: 85 },
   { name: 'JavaScript', icon: FaJs, color: '#F7DF1E', level: 80 },
@@ -39,7 +44,16 @@ const skills = [
   { name: 'SQL', icon: FaDatabase, color: '#4479A1', level: 80 },
 ];
 
-const SkillBar = ({ skill }: { skill: typeof skills[0] }) => {
+const softSkills = [
+  { name: 'Leadership', icon: FaUsers, color: '#4F46E5', level: 90 },
+  { name: 'Communication', icon: FaChartLine, color: '#10B981', level: 85 },
+  { name: 'Problem Solving', icon: FaLightbulb, color: '#F59E0B', level: 90 },
+  { name: 'Organizing & Management', icon: FaChartLine, color: '#8B5CF6', level: 85 },
+  { name: 'Graphics Design', icon: FaPalette, color: '#EC4899', level: 80 },
+  { name: 'Web Development', icon: FaCode, color: '#3B82F6', level: 90 },
+];
+
+const SkillBar = ({ skill }: { skill: typeof technicalSkills[0] }) => {
   const Icon = skill.icon;
   
   return (
@@ -68,18 +82,40 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20 bg-white dark:bg-gray-800">
       <div className="container">
-        <h2 className="text-3xl font-bold mb-12 text-center">Technical Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <SkillBar skill={skill} />
-            </motion.div>
-          ))}
+        <h2 className="text-3xl font-bold mb-12 text-center">Skills & Expertise</h2>
+        
+        {/* Technical Skills */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-semibold mb-8 text-center">Technical Skills</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {technicalSkills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <SkillBar skill={skill} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Soft Skills */}
+        <div>
+          <h3 className="text-2xl font-semibold mb-8 text-center">Soft Skills</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {softSkills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <SkillBar skill={skill} />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
