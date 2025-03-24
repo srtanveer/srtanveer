@@ -221,7 +221,7 @@ export default function Home() {
           <div className="max-w-xl mx-auto">
             <div className="text-center mb-8">
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                HN-1779, Road-09, Medinabag, Rayerbag Kadamtoli Dhaka-1236<br />
+                HN-1779, Road-09, Modinabag, Rayerbag Kadamtoli Dhaka-1236<br />
                 Cell: 01569-104401, 0164-333-2243<br />
                 Email: srtanveer.cse@gmail.com
               </p>
