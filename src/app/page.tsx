@@ -259,8 +259,9 @@ export default function Home() {
                 Email: srtanveer.cse@gmail.com
               </p>
               <div className="flex justify-center space-x-6">
-                <a href="https://www.linkedin.com/in/showaibrahmantanveer-cse-bd" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/srtanveer" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">LinkedIn</a>
                 <a href="https://codeforces.com/profile/i_dont_byte" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">Codeforces</a>
+                <a href="https://github.com/idontbyte69" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">GitHub</a>
               </div>
             </div>
             <form onSubmit={handleSubmit} className="space-y-6">
