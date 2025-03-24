@@ -26,6 +26,18 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="flex flex-col md:flex-row items-center justify-between gap-12"
           >
+            <div className="md:flex-shrink-0">
+              <div className="relative w-64 h-64 md:w-80 md:h-80">
+                <Image
+                  src="/profile-photo.jpg"
+                  alt="MD SHOWAIB RAHMAN TANVEER"
+                  width={320}
+                  height={320}
+                  className="rounded-full object-cover shadow-2xl w-full h-full"
+                  priority
+                />
+              </div>
+            </div>
             <div className="text-center md:text-left md:flex-1">
               <h1 className="text-4xl sm:text-6xl font-bold mb-6">
                 Hi, I'm <span className="text-primary-600 dark:text-primary-400">MD SHOWAIB RAHMAN TANVEER</span>
@@ -43,18 +55,7 @@ export default function Home() {
                 Get in Touch
               </a>
             </div>
-            <div className="md:flex-shrink-0">
-              <div className="relative w-64 h-64 md:w-80 md:h-80">
-                <Image
-                  src="/profile-photo.jpg"
-                  alt="MD SHOWAIB RAHMAN TANVEER"
-                  width={320}
-                  height={320}
-                  className="rounded-full object-cover shadow-2xl w-full h-full"
-                  priority
-                />
-              </div>
-            </div>
+            
           </motion.div>
         </div>
       </section>
