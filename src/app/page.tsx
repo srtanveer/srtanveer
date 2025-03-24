@@ -64,21 +64,21 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-20 bg-white dark:bg-gray-800">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">Education</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">EDUCATION</h2>
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">B.Sc. in Computer Science and Engineering</h3>
+              <h3 className="text-xl font-semibold">B.Sc. in Computer Science and Engineering (CSE)</h3>
               <p className="text-gray-600 dark:text-gray-300">Green University of Bangladesh</p>
               <p className="text-gray-500">Expected Graduation: 2026</p>
             </div>
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
               <h3 className="text-xl font-semibold">HSC in Science</h3>
-              <p className="text-gray-600 dark:text-gray-300">Adamjee Nagar MW College</p>
+              <p className="text-gray-600 dark:text-gray-300">Adamjeenagar MW College</p>
               <p className="text-gray-500">Result: 4.83 (2020)</p>
             </div>
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
               <h3 className="text-xl font-semibold">SSC in Science</h3>
-              <p className="text-gray-600 dark:text-gray-300">A.K High School and College</p>
+              <p className="text-gray-600 dark:text-gray-300">A.K. High School and College</p>
               <p className="text-gray-500">Result: 4.56 (2018)</p>
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">PROJECTS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -156,22 +156,22 @@ export default function Home() {
       {/* Experience Section */}
       <section id="experience" className="py-20 bg-white dark:bg-gray-800">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">Work Experience</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">WORK EXPERIENCE</h2>
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
               <h3 className="text-xl font-semibold">Computer Operator</h3>
               <p className="text-gray-600 dark:text-gray-300">Faijan Solutions</p>
-              <p className="text-gray-500">August, 2020 to Present</p>
+              <p className="text-gray-500">August, 2020 to Present (Self-Employed)</p>
             </div>
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
               <h3 className="text-xl font-semibold">Data Entry Specialist & Web Service Management Officer</h3>
-              <p className="text-gray-600 dark:text-gray-300">Rang Bangladesh</p>
-              <p className="text-gray-500">February, 2023 to May, 2023</p>
+              <p className="text-gray-600 dark:text-gray-300">Rang Bangladesh Ltd.</p>
+              <p className="text-gray-500">February, 2023 to May, 2023 (Contractual)</p>
             </div>
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
               <h3 className="text-xl font-semibold">Data Entry Specialist</h3>
-              <p className="text-gray-600 dark:text-gray-300">Upwork</p>
-              <p className="text-gray-500">April, 2018 to February, 2023</p>
+              <p className="text-gray-600 dark:text-gray-300">UpWork</p>
+              <p className="text-gray-500">April, 2018 to February, 2023 (Freelancing)</p>
             </div>
           </div>
         </div>
@@ -183,7 +183,7 @@ export default function Home() {
       {/* Leadership Section */}
       <section id="leadership" className="py-20 bg-white dark:bg-gray-800">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">Leadership & Activities</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center"> LEADERSHIP & ACTIVITIES</h2>
           <div className="max-w-4xl mx-auto space-y-6">
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
               <h3 className="text-xl font-semibold">President</h3>
@@ -221,8 +221,8 @@ export default function Home() {
           <div className="max-w-xl mx-auto">
             <div className="text-center mb-8">
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                HN-1779, Road-09, Modinabag, Rayerbag Kadamtoli Dhaka-1236<br />
-                Cell: 01569-104401, 0164-333-2243<br />
+                HN-1779, Road-09, Modinabag, Rayerbag, Kadamtoli, Dhaka-1236<br />
+                Cell/Whatsapp: 01569104401, 01643332243<br />
                 Email: srtanveer.cse@gmail.com
               </p>
               <div className="flex justify-center space-x-6">

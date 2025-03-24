@@ -84,11 +84,11 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20 bg-white dark:bg-gray-800">
       <div className="container">
-        <h2 className="text-3xl font-bold mb-12 text-center">Skills & Expertise</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">SKILLS & EXPERTISE</h2>
         
         {/* Technical Skills */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-center">Technical Skills</h3>
+          <h3 className="text-2xl font-semibold mb-8 text-center">TECHNICAL SKILLS</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {technicalSkills.map((skill, index) => (
               <motion.div
@@ -105,7 +105,7 @@ export default function Skills() {
 
         {/* Soft Skills */}
         <div>
-          <h3 className="text-2xl font-semibold mb-8 text-center">Soft Skills</h3>
+          <h3 className="text-2xl font-semibold mb-8 text-center">SOFT SKILLS</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {softSkills.map((skill, index) => (
               <motion.div
