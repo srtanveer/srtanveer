@@ -197,8 +197,18 @@ export default function Home() {
             </div>
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
               <h3 className="text-xl font-semibold">Joint General Secretary</h3>
+              <p className="text-gray-600 dark:text-gray-300">Green University Computer Club (GUCC), 2023-24(Reformed)</p>
+              <p className="text-gray-500"> Decision Making & Creative thinking</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+              <h3 className="text-xl font-semibold">Joint Cultural Secretary</h3>
               <p className="text-gray-600 dark:text-gray-300">Green University Computer Club (GUCC), 2023-24</p>
-              <p className="text-gray-500">Leadership & Creative thinking</p>
+              <p className="text-gray-500">Communication & Organizing</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+              <h3 className="text-xl font-semibold">Executive Member</h3>
+              <p className="text-gray-600 dark:text-gray-300">Green University Computer Club Permanent Campus, 2022-23</p>
+              <p className="text-gray-500">Team-Work & Learning</p>
             </div>
           </div>
         </div>

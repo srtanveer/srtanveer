@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/tab-icon-copy.jpg',
+        url: '/profile-photo.jpg',
         sizes: '32x32',
         type: 'image/jpg'
       },
