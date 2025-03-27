@@ -1,6 +1,6 @@
 <!-- ASCII Art for Name -->
 <h1 align="center"> 
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=F75C7E&center=true&vCenter=true&width=500&lines=Hi+%F0%9F%91%8B%2C+I'm+MD.+Showaib+Rahman+Tanveer;Engineering+Student+%7C+Computer+Science;Passionate+about+Cybersecurity+and+NLP">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=F75C7E&center=true&vCenter=true&width=500&lines=Hi+%F0%9F%91%8B%2C+I'm+MD.+Showaib+Rahman+Tanveer;Engineering+Student+%7C+Computer+Science;Passionate+about+AI+and+NLP">
 </h1>
 
 <!-- Profile Views Counter -->
@@ -44,7 +44,7 @@
 ## 📊 GitHub Stats  
 <div align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=idontbyte69&theme=radical" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=idontbyte69&theme=radical&hide_border=true" alt="GitHub Streak" />
+<!--   <img src="https://github-readme-streak-stats.herokuapp.com/?user=idontbyte69&theme=radical&hide_border=true" alt="GitHub Streak" /> -->
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=idontbyte69&theme=radical" />
 </div>
 
