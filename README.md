@@ -1,38 +1,56 @@
-<h1 align="center">Hi 👋, I'm MD. Showaib Rahman Tanveer</h1>
-<h3 align="center">Engineering Student | Computer Science</h3>
+<!-- ASCII Art for Name -->
+<h1 align="center"> 
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&duration=3000&pause=1000&color=F75C7E&center=true&vCenter=true&width=500&lines=Hi+%F0%9F%91%8B%2C+I'm+MD.+Showaib+Rahman+Tanveer;Engineering+Student+%7C+Computer+Science;Passionate+about+Cybersecurity+and+NLP">
+</h1>
 
-<p align="left"> 
-  <img src="https://komarev.com/ghpvc/?username=idontbyte69&label=Profile%20views&color=0e75b6&style=flat" alt="Profile Views" /> 
+<!-- Profile Views Counter -->
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=idontbyte69&label=Profile%20views&color=F75C7E&style=flat" alt="Profile Views" />
 </p>
 
-- 👨‍💻 All of my projects are available at [GitHub](https://github.com/idontbyte69)  
-- 📫 Reach me at **srtanveer.cse@gmail.com**  
+<!-- About Me -->
+## 👨‍💻 About Me
+- 🔭 I’m currently working on **Secure Multi-User Encrypted Messaging System**  
+- 📫 How to reach me: **srtanveer.cse@gmail.com**  
+- 🚀 All my projects are available at [**GitHub**](https://github.com/idontbyte69)  
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
+---
+
+<!-- Social Links with Icons -->
+## 🌍 Connect With Me  
+<p align="center">
   <a href="https://linkedin.com/in/srtanveer" target="_blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="LinkedIn" height="30" width="40" />
+    <img src="https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
   <a href="https://fb.com/tanveer.vaiya01" target="_blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="Facebook" height="30" width="40" />
+    <img src="https://img.shields.io/badge/Facebook-%231877F2?style=for-the-badge&logo=facebook&logoColor=white" />
   </a>
   <a href="https://instagram.com/i_dont_byte" target="_blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="Instagram" height="30" width="40" />
+    <img src="https://img.shields.io/badge/Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
   </a>
 </p>
 
-<h3 align="left">Languages and Tools:</h3>
-<!-- Add your existing icons here -->
+---
 
-<h3 align="left">📊 GitHub Stats</h3>
-<div align="left">
-  <p>
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=idontbyte69&layout=compact&theme=radical&hide_border=true" alt="Top Languages" />
-  </p>
-  <p>
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=idontbyte69&theme=radical&hide_border=true" alt="GitHub Streak" />
-  </p>
-  <p>
-    <img src="https://github-readme-stats.vercel.app/api?username=idontbyte69&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats" />
-  </p>
+<!-- Languages and Tools -->
+## 🛠️ Languages & Tools
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,c,cpp,js,html,css,react,git,github" />
+</p>
+
+---
+
+<!-- GitHub Stats with Circular Design -->
+## 📊 GitHub Stats  
+<div align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=idontbyte69&theme=radical" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=idontbyte69&theme=radical&hide_border=true" alt="GitHub Streak" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=idontbyte69&theme=radical" />
 </div>
+
+---
+
+<!-- Fun Badge -->
+<p align="center">
+  <img src="https://forthebadge.com/images/badges/built-with-love.svg" />
+</p>
