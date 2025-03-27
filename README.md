@@ -10,8 +10,8 @@
 
 <!-- About Me -->
 ## 👨‍💻 About Me
-- 🔭 I’m currently working on **Secure Multi-User Encrypted Messaging System**  
-- 📫 How to reach me: **srtanveer.cse@gmail.com**  
+- 🔭 I’m currently pursuing my BSc in CSE from Bangladesh**  
+- 📫 How to reach me: [**SR TANVEER**(Website)](https://srtanveer.vercel.app/)  
 - 🚀 All my projects are available at [**GitHub**](https://github.com/idontbyte69)  
 
 ---
