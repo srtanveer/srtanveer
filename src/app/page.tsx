@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { FormEvent } from 'react';
 import Image from 'next/image';
 import Skills from '@/components/Skills';
+import Projects from '@/components/Projects';
 
 export default function Home() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -65,113 +66,48 @@ export default function Home() {
       <section id="about" className="py-20 bg-white dark:bg-gray-800">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">EDUCATION</h2>
-          <div className="max-w-3xl mx-auto space-y-8">
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">B.Sc. in Computer Science and Engineering (CSE)</h3>
-              <p className="text-gray-600 dark:text-gray-300">Green University of Bangladesh</p>
-              <p className="text-gray-500">Expected Graduation: 2026</p>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">B.Sc. in Computer Science and Engineering (CSE)</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University of Bangladesh</p>
+              <p className="text-sm lg:text-base text-gray-500">Expected Graduation: 2026</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">HSC in Science</h3>
-              <p className="text-gray-600 dark:text-gray-300">Adamjeenagar MW College</p>
-              <p className="text-gray-500">Result: 4.83 (2020)</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">HSC in Science</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Adamjeenagar MW College</p>
+              <p className="text-sm lg:text-base text-gray-500">Result: 4.83 (2020)</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">SSC in Science</h3>
-              <p className="text-gray-600 dark:text-gray-300">A.K. High School and College</p>
-              <p className="text-gray-500">Result: 4.56 (2018)</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">SSC in Science</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">A.K. High School and College</p>
+              <p className="text-sm lg:text-base text-gray-500">Result: 4.56 (2018)</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
-        <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">PROJECTS</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Perfect Pathway",
-                description: "A path finding game built using Python for my Algorithm course. The project demonstrates implementation of pathfinding algorithms.",
-                tech: ["Python", "Algorithms"],
-                github: "https://github.com/idontbyte69/perfect-pathway"
-              },
-              {
-                title: "Calculator For Everyone",
-                description: "A Java-based calculator with Object-Oriented Programming concepts, built for the Object-Oriented Programming course.",
-                tech: ["Java", "OOP"],
-                github: "https://github.com/idontbyte69/java-project---Calculator-for-everyone"
-              },
-              {
-                title: "All in One Data Structure",
-                description: "A learning program built in C for the Data Structure course, helping students understand various data structures.",
-                tech: ["C", "Data Structures"],
-                github: "https://github.com/idontbyte69/All-In-One-Data-Structures-using-C"
-              }
-            ].map((project, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                <div className="p-6">
-                  <a 
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block"
-                  >
-                    <h3 className="text-xl font-semibold mb-2 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
-                      {project.title}
-                    </h3>
-                  </a>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, techIndex) => (
-                      <span key={techIndex} className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-                  >
-                    View on GitHub
-                    <svg className="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Projects />
 
       {/* Experience Section */}
       <section id="experience" className="py-20 bg-white dark:bg-gray-800">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">WORK EXPERIENCE</h2>
-          <div className="max-w-4xl mx-auto space-y-8">
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">Computer Operator</h3>
-              <p className="text-gray-600 dark:text-gray-300">Faijan Solutions</p>
-              <p className="text-gray-500">August, 2020 to Present (Self-Employed)</p>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Computer Operator</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Faijan Solutions</p>
+              <p className="text-sm lg:text-base text-gray-500">August, 2020 to Present (Self-Employed)</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">Data Entry Specialist & Web Service Management Officer</h3>
-              <p className="text-gray-600 dark:text-gray-300">Rang Bangladesh Ltd.</p>
-              <p className="text-gray-500">February, 2023 to May, 2023 (Contractual)</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Data Entry Specialist & Web Service Management Officer</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Rang Bangladesh Ltd.</p>
+              <p className="text-sm lg:text-base text-gray-500">February, 2023 to May, 2023 (Contractual)</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">Data Entry Specialist</h3>
-              <p className="text-gray-600 dark:text-gray-300">UpWork</p>
-              <p className="text-gray-500">April, 2018 to February, 2023 (Freelancing)</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Data Entry Specialist</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">UpWork</p>
+              <p className="text-sm lg:text-base text-gray-500">April, 2018 to February, 2023 (Freelancing)</p>
             </div>
           </div>
         </div>
@@ -183,32 +119,32 @@ export default function Home() {
       {/* Leadership Section */}
       <section id="leadership" className="py-20 bg-white dark:bg-gray-800">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center"> LEADERSHIP & ACTIVITIES</h2>
-          <div className="max-w-4xl mx-auto space-y-6">
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">President</h3>
-              <p className="text-gray-600 dark:text-gray-300">Green University Computer Club (GUCC), 2025</p>
-              <p className="text-gray-500">Leadership & Policy Making</p>
+          <h2 className="text-3xl font-bold mb-12 text-center">LEADERSHIP & ACTIVITIES</h2>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">President</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University Computer Club (GUCC), 2025</p>
+              <p className="text-sm lg:text-base text-gray-500">Leadership & Policy Making</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">Intern Data Collector</h3>
-              <p className="text-gray-600 dark:text-gray-300">Green University Center for International Affairs – GCIA</p>
-              <p className="text-gray-500">Collecting data of Foreign Universities & Organizing MOU</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Intern Data Collector</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University Center for International Affairs – GCIA</p>
+              <p className="text-sm lg:text-base text-gray-500">Collecting data of Foreign Universities & Organizing MOU</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">Joint General Secretary</h3>
-              <p className="text-gray-600 dark:text-gray-300">Green University Computer Club (GUCC), 2023-24(Reformed)</p>
-              <p className="text-gray-500"> Decision Making & Creative thinking</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Joint General Secretary</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University Computer Club (GUCC), 2023-24(Reformed)</p>
+              <p className="text-sm lg:text-base text-gray-500">Decision Making & Creative thinking</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">Joint Cultural Secretary</h3>
-              <p className="text-gray-600 dark:text-gray-300">Green University Computer Club (GUCC), 2023-24</p>
-              <p className="text-gray-500">Communication & Organizing</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Joint Cultural Secretary</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University Computer Club (GUCC), 2023-24</p>
+              <p className="text-sm lg:text-base text-gray-500">Communication & Organizing</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-              <h3 className="text-xl font-semibold">Executive Member</h3>
-              <p className="text-gray-600 dark:text-gray-300">Green University Computer Club Permanent Campus, 2022-23</p>
-              <p className="text-gray-500">Team-Work & Learning</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Executive Member</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University Computer Club Permanent Campus, 2022-23</p>
+              <p className="text-sm lg:text-base text-gray-500">Team-Work & Learning</p>
             </div>
           </div>
         </div>

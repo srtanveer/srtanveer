@@ -59,15 +59,15 @@ const SkillBar = ({ skill }: { skill: typeof technicalSkills[0] }) => {
   const Icon = skill.icon;
   
   return (
-    <div className="mb-6">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2">
-          <Icon className="text-2xl" style={{ color: skill.color }} />
-          <span className="font-medium">{skill.name}</span>
+    <div className="mb-4 md:mb-6">
+      <div className="flex items-center justify-between mb-1 md:mb-2">
+        <div className="flex items-center gap-1 md:gap-2">
+          <Icon className="text-xl md:text-2xl" style={{ color: skill.color }} />
+          <span className="font-medium text-sm md:text-base">{skill.name}</span>
         </div>
-        <span className="text-sm text-gray-600 dark:text-gray-400">{skill.level}%</span>
+        <span className="text-xs md:text-sm text-gray-600 dark:text-gray-400">{skill.level}%</span>
       </div>
-      <div className="h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
+      <div className="h-1.5 md:h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${skill.level}%` }}
@@ -84,12 +84,12 @@ export default function Skills() {
   return (
     <section id="skills" className="py-20 bg-white dark:bg-gray-800">
       <div className="container">
-        <h2 className="text-3xl font-bold mb-12 text-center">SKILLS & EXPERTISE</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">Skills & Expertise</h2>
         
         {/* Technical Skills */}
         <div className="mb-16">
-          <h3 className="text-2xl font-semibold mb-8 text-center">TECHNICAL SKILLS</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <h3 className="text-2xl font-semibold mb-8 text-center">Technical Skills</h3>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
             {technicalSkills.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -105,8 +105,8 @@ export default function Skills() {
 
         {/* Soft Skills */}
         <div>
-          <h3 className="text-2xl font-semibold mb-8 text-center">SOFT SKILLS</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <h3 className="text-2xl font-semibold mb-8 text-center">Soft Skills</h3>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
             {softSkills.map((skill, index) => (
               <motion.div
                 key={skill.name}
