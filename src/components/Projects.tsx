@@ -47,21 +47,14 @@ export default function Projects() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showAll, setShowAll] = useState(false);
   
-  // Get 3 random projects
-  const getRandomProjects = () => {
-    const shuffled = [...projects].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 3);
-  };
-  
-  const [randomProjects] = useState(getRandomProjects());
-
   const filteredProjects = projects.filter(project =>
     project.technologies.some(tech =>
       tech.toLowerCase().includes(searchQuery.toLowerCase())
     )
   );
 
-  const displayedProjects = searchQuery ? filteredProjects : (showAll ? projects : randomProjects);
+  // Show first 3 projects by default instead of random selection
+  const displayedProjects = searchQuery ? filteredProjects : (showAll ? projects : projects.slice(0, 3));
 
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
