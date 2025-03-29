@@ -59,7 +59,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container">
-        <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">PROJECTS</h2>
         
         {/* Search Bar */}
         <div className="max-w-md mx-auto mb-12 relative">

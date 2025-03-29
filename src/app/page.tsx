@@ -130,31 +130,90 @@ export default function Home() {
       <section id="leadership" className="py-20 bg-white dark:bg-gray-800">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">LEADERSHIP & ACTIVITIES</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">President</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University Computer Club (GUCC), 2025</p>
-              <p className="text-sm lg:text-base text-gray-500">Leadership & Policy Making</p>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
+                <Image
+                  src="/President.png"
+                  alt="President of GUCC"
+                  fill
+                  className="object-contain bg-[#1e293b] p-2"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                />
+              </div>
+              <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
+                <h3 className="text-lg md:text-xl font-semibold mb-2">President</h3>
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">Green University Computer Club (GUCC), 2025</p>
+                <p className="text-sm md:text-base text-gray-500">Leadership & Policy Making</p>
+              </div>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">Intern Data Collector</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University Center for International Affairs – GCIA</p>
-              <p className="text-sm lg:text-base text-gray-500">Collecting data of Foreign Universities & Organizing MOU</p>
+
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
+                <Image
+                  src="/Intern.jpg"
+                  alt="Intern Data Collector"
+                  fill
+                  className="object-contain bg-[#1e293b] p-2"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                />
+              </div>
+              <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
+                <h3 className="text-lg md:text-xl font-semibold mb-2">Intern Data Collector</h3>
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">Green University Center for International Affairs – GCIA</p>
+                <p className="text-sm md:text-base text-gray-500">Collecting data of Foreign Universities & Organizing MOU</p>
+              </div>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">Joint General Secretary</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University Computer Club (GUCC), 2023-24(Reformed)</p>
-              <p className="text-sm lg:text-base text-gray-500">Decision Making & Creative thinking</p>
+
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
+                <Image
+                  src="/Joint General Secratary.png"
+                  alt="Joint General Secretary"
+                  fill
+                  className="object-contain bg-[#1e293b] p-2"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                />
+              </div>
+              <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
+                <h3 className="text-lg md:text-xl font-semibold mb-2">Joint General Secretary</h3>
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">Green University Computer Club (GUCC), 2023-24(Reformed)</p>
+                <p className="text-sm md:text-base text-gray-500">Decision Making & Creative thinking</p>
+              </div>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">Joint Cultural Secretary</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University Computer Club (GUCC), 2023-24</p>
-              <p className="text-sm lg:text-base text-gray-500">Communication & Organizing</p>
+
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
+                <Image
+                  src="/Joint Cultural Secretary.jpg"
+                  alt="Joint Cultural Secretary"
+                  fill
+                  className="object-contain bg-[#1e293b] p-2"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                />
+              </div>
+              <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
+                <h3 className="text-lg md:text-xl font-semibold mb-2">Joint Cultural Secretary</h3>
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">Green University Computer Club (GUCC), 2023-24</p>
+                <p className="text-sm md:text-base text-gray-500">Communication & Organizing</p>
+              </div>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">Executive Member</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University Computer Club Permanent Campus, 2022-23</p>
-              <p className="text-sm lg:text-base text-gray-500">Team-Work & Learning</p>
+
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
+              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
+                <Image
+                  src="/Executive Member.jpeg"
+                  alt="Executive Member"
+                  fill
+                  className="object-contain bg-[#1e293b] p-2"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                />
+              </div>
+              <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
+                <h3 className="text-lg md:text-xl font-semibold mb-2">Executive Member</h3>
+                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">Green University Computer Club Permanent Campus, 2022-23</p>
+                <p className="text-sm md:text-base text-gray-500">Team-Work & Learning</p>
+              </div>
             </div>
           </div>
         </div>
