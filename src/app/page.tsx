@@ -46,7 +46,7 @@ export default function Home() {
       console.error('Error sending email:', error);
       setSubmitStatus({
         type: 'error',
-        message: 'Sorry, there was an error sending your message. Please try again.',
+        message: 'Sorry, there was an error sending your message. Please try again..',
       });
     } finally {
       setIsSubmitting(false);
