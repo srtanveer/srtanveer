@@ -50,12 +50,22 @@ export default function Home() {
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
                 To obtain a challenging role in the technology industry, where I can utilize my passion for learning about emerging technologies and apply my technical skills to create innovative solutions.
               </p>
-              <a
-                href="#contact"
-                className="inline-block bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-8 rounded-lg transition-colors"
-              >
-                Get in Touch
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                <a
+                  href="#contact"
+                  className="inline-block bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-8 rounded-lg transition-colors text-center"
+                >
+                  Get in Touch
+                </a>
+                <a
+                  href="https://drive.google.com/file/d/1p0uKiSxEIuzWn5uq4-_j0atZ3O6YOWY9/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block border-2 border-primary-600 dark:border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-500 dark:hover:text-white font-medium py-3 px-8 rounded-lg transition-colors text-center"
+                >
+                  View Resume
+                </a>
+              </div>
             </div>
             
           </motion.div>
@@ -145,6 +155,59 @@ export default function Home() {
               <h3 className="text-lg lg:text-xl font-semibold">Executive Member</h3>
               <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University Computer Club Permanent Campus, 2022-23</p>
               <p className="text-sm lg:text-base text-gray-500">Team-Work & Learning</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Awards & Honors Section */}
+      <section id="awards" className="py-20 bg-gray-50 dark:bg-gray-900">
+        <div className="container">
+          <h2 className="text-3xl font-bold mb-12 text-center">AWARDS & HONORS</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Best Project</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Integrated Design Project Poster Presentation</p>
+              <p className="text-sm lg:text-base text-gray-500">Fall 2024 Dept of CSE, GUB</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Most Active Volunteer</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Cholera Campaign</p>
+              <p className="text-sm lg:text-base text-gray-500">2022</p>
+            </div>
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Runner up in Web Development</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Notre Dame Science Festival</p>
+              <p className="text-sm lg:text-base text-gray-500">2017</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Training & Certification Section */}
+      <section id="certifications" className="py-20 bg-white dark:bg-gray-800">
+        <div className="container">
+          <h2 className="text-3xl font-bold mb-12 text-center">TRAINING & CERTIFICATION</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-6 max-w-7xl mx-auto">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Workshop on Python Programming in a Pragmatic Approach</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Organized by Green University Computer Club</p>
+              <p className="text-sm lg:text-base text-gray-500">2022</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Cholera Vaccination</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Organized by icddr,b</p>
+              <p className="text-sm lg:text-base text-gray-500">2022</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">JavaScript Algorithms and Data Structures</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Issued by freeCodeCamp</p>
+              <p className="text-sm lg:text-base text-gray-500">July, 2020</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg lg:text-xl font-semibold">Responsive Web Design</h3>
+              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Issued by freeCodeCamp</p>
+              <p className="text-sm lg:text-base text-gray-500">June, 2020</p>
             </div>
           </div>
         </div>
