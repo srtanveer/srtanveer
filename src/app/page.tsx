@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { FormEvent } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FormEvent, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
@@ -15,6 +15,88 @@ export default function Home() {
       email: formData.get('email'),
       message: formData.get('message'),
     });
+  };
+
+  const leadershipCards = [
+    {
+      image: "/President.png",
+      title: "President",
+      organization: "Green University Computer Club (GUCC), 2025",
+      description: "Leadership & Policy Making",
+      alt: "President of GUCC"
+    },
+    {
+      image: "/Intern.jpg",
+      title: "Intern Data Collector",
+      organization: "Green University Center for International Affairs – GCIA",
+      description: "Collecting data of Foreign Universities & Organizing MOU",
+      alt: "Intern Data Collector"
+    },
+    {
+      image: "/Joint General Secratary.png",
+      title: "Joint General Secretary",
+      organization: "Green University Computer Club (GUCC), 2023-24(Reformed)",
+      description: "Decision Making & Creative thinking",
+      alt: "Joint General Secretary"
+    },
+    {
+      image: "/Joint Cultural Secretary.jpg",
+      title: "Joint Cultural Secretary",
+      organization: "Green University Computer Club (GUCC), 2023-24",
+      description: "Communication & Organizing",
+      alt: "Joint Cultural Secretary"
+    },
+    {
+      image: "/Executive Member.jpeg",
+      title: "Executive Member",
+      organization: "Green University Computer Club Permanent Campus, 2022-23",
+      description: "Team-Work & Learning",
+      alt: "Executive Member"
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const visibleCards = () => {
+    const cards = [];
+    const cardsToShow = window.innerWidth < 1024 ? 2 : 3; // Show 2 cards on mobile/tablet, 3 on desktop
+    for (let i = 0; i < cardsToShow; i++) {
+      const index = (currentIndex + i) % leadershipCards.length;
+      cards.push(leadershipCards[index]);
+    }
+    return cards;
+  };
+
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (isHovered) return;
+
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % leadershipCards.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [isHovered]);
+
+  const handlePrevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + leadershipCards.length) % leadershipCards.length);
+  };
+
+  const handleNextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % leadershipCards.length);
   };
 
   return (
@@ -127,94 +209,93 @@ export default function Home() {
       <Skills />
 
       {/* Leadership Section */}
-      <section id="leadership" className="py-20 bg-white dark:bg-gray-800">
+      <section id="leadership" className="py-20 bg-white dark:bg-gray-800 overflow-hidden">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">LEADERSHIP & ACTIVITIES</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 max-w-7xl mx-auto">
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
-              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
-                <Image
-                  src="/President.png"
-                  alt="President of GUCC"
-                  fill
-                  className="object-contain bg-[#1e293b] p-2"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+          <div 
+            className="relative max-w-7xl mx-auto"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {/* Left Arrow */}
+            <button
+              onClick={handlePrevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-10 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 backdrop-blur-sm"
+              aria-label="Previous slide"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-6 h-6 text-gray-800 dark:text-white"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 19.5L8.25 12l7.5-7.5"
                 />
-              </div>
-              <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
-                <h3 className="text-lg md:text-xl font-semibold mb-2">President</h3>
-                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">Green University Computer Club (GUCC), 2025</p>
-                <p className="text-sm md:text-base text-gray-500">Leadership & Policy Making</p>
-              </div>
-            </div>
+              </svg>
+            </button>
 
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
-              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
-                <Image
-                  src="/Intern.jpg"
-                  alt="Intern Data Collector"
-                  fill
-                  className="object-contain bg-[#1e293b] p-2"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+            {/* Right Arrow */}
+            <button
+              onClick={handleNextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-10 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 backdrop-blur-sm"
+              aria-label="Next slide"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-6 h-6 text-gray-800 dark:text-white"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
                 />
-              </div>
-              <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
-                <h3 className="text-lg md:text-xl font-semibold mb-2">Intern Data Collector</h3>
-                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">Green University Center for International Affairs – GCIA</p>
-                <p className="text-sm md:text-base text-gray-500">Collecting data of Foreign Universities & Organizing MOU</p>
-              </div>
-            </div>
+              </svg>
+            </button>
 
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
-              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
-                <Image
-                  src="/Joint General Secratary.png"
-                  alt="Joint General Secretary"
-                  fill
-                  className="object-contain bg-[#1e293b] p-2"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                />
-              </div>
-              <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
-                <h3 className="text-lg md:text-xl font-semibold mb-2">Joint General Secretary</h3>
-                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">Green University Computer Club (GUCC), 2023-24(Reformed)</p>
-                <p className="text-sm md:text-base text-gray-500">Decision Making & Creative thinking</p>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
-              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
-                <Image
-                  src="/Joint Cultural Secretary.jpg"
-                  alt="Joint Cultural Secretary"
-                  fill
-                  className="object-contain bg-[#1e293b] p-2"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                />
-              </div>
-              <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
-                <h3 className="text-lg md:text-xl font-semibold mb-2">Joint Cultural Secretary</h3>
-                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">Green University Computer Club (GUCC), 2023-24</p>
-                <p className="text-sm md:text-base text-gray-500">Communication & Organizing</p>
-              </div>
-            </div>
-
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col">
-              <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
-                <Image
-                  src="/Executive Member.jpeg"
-                  alt="Executive Member"
-                  fill
-                  className="object-contain bg-[#1e293b] p-2"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-                />
-              </div>
-              <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
-                <h3 className="text-lg md:text-xl font-semibold mb-2">Executive Member</h3>
-                <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">Green University Computer Club Permanent Campus, 2022-23</p>
-                <p className="text-sm md:text-base text-gray-500">Team-Work & Learning</p>
-              </div>
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={currentIndex}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
+              >
+                {visibleCards().map((card, index) => (
+                  <motion.div
+                    key={`${currentIndex}-${index}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.3 }}
+                    className={`bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col ${index >= (windowWidth < 1024 ? 2 : 3) ? 'hidden' : ''}`}
+                  >
+                    <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
+                      <Image
+                        src={card.image}
+                        alt={card.alt}
+                        fill
+                        className="object-contain bg-[#1e293b] p-2"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                      />
+                    </div>
+                    <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
+                      <h3 className="text-lg md:text-xl font-semibold mb-2">{card.title}</h3>
+                      <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">{card.organization}</p>
+                      <p className="text-sm md:text-base text-gray-500">{card.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </section>
