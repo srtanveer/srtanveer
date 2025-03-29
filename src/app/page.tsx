@@ -5,16 +5,52 @@ import { FormEvent, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
+import emailjs from '@emailjs/browser';
 
 export default function Home() {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    console.log({
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message'),
-    });
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+
+    try {
+      const formData = new FormData(e.currentTarget);
+      const templateParams = {
+        from_name: formData.get('name'),
+        from_email: formData.get('email'),
+        message: formData.get('message'),
+        to_name: 'MD SHOWAIB RAHMAN TANVEER', // Your name
+      };
+
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '',
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+      );
+
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you! Your message has been sent successfully.',
+      });
+      
+      // Reset form
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Sorry, there was an error sending your message. Please try again.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const leadershipCards = [
@@ -375,6 +411,17 @@ export default function Home() {
                 <a href="https://www.instagram.com/i_dont_byte/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">Instagram</a>
               </div>
             </div>
+            
+            {submitStatus.type && (
+              <div className={`mb-6 p-4 rounded-lg ${
+                submitStatus.type === 'success' 
+                  ? 'bg-green-100 text-green-700 dark:bg-green-800 dark:text-green-100' 
+                  : 'bg-red-100 text-red-700 dark:bg-red-800 dark:text-red-100'
+              }`}>
+                {submitStatus.message}
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
@@ -384,6 +431,7 @@ export default function Home() {
                   name="name"
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent dark:bg-gray-700"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -394,6 +442,7 @@ export default function Home() {
                   name="email"
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent dark:bg-gray-700"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -404,13 +453,17 @@ export default function Home() {
                   rows={4}
                   className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 focus:border-transparent dark:bg-gray-700"
                   required
+                  disabled={isSubmitting}
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-8 rounded-lg transition-colors"
+                disabled={isSubmitting}
+                className={`w-full bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-8 rounded-lg transition-colors ${
+                  isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                }`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
