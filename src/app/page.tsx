@@ -57,21 +57,12 @@ export default function Home() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-
-  const visibleCards = () => {
-    const cards = [];
-    const cardsToShow = window.innerWidth < 1024 ? 2 : 3; // Show 2 cards on mobile/tablet, 3 on desktop
-    for (let i = 0; i < cardsToShow; i++) {
-      const index = (currentIndex + i) % leadershipCards.length;
-      cards.push(leadershipCards[index]);
-    }
-    return cards;
-  };
-
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+  const [windowWidth, setWindowWidth] = useState(1024);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    setIsMounted(true);
+    setWindowWidth(window.innerWidth);
 
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
@@ -80,6 +71,16 @@ export default function Home() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const visibleCards = () => {
+    const cards = [];
+    const cardsToShow = isMounted && windowWidth < 1024 ? 2 : 3;
+    for (let i = 0; i < cardsToShow; i++) {
+      const index = (currentIndex + i) % leadershipCards.length;
+      cards.push(leadershipCards[index]);
+    }
+    return cards;
+  };
 
   useEffect(() => {
     if (isHovered) return;
