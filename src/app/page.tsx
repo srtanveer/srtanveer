@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import emailjs from '@emailjs/browser';
+import ParticlesBackground from '@/components/ParticlesBackground';
 
 export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -138,8 +139,9 @@ export default function Home() {
 
   return (
     <div className="pt-16">
+      <ParticlesBackground />
       {/* Hero Section */}
-      <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+      <section className="min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-b from-white/80 to-gray-50/80 dark:from-gray-900/80 dark:to-gray-800/80 backdrop-blur-sm">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -192,7 +194,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white dark:bg-gray-800">
+      <section id="about" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">EDUCATION</h2>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
@@ -219,7 +221,7 @@ export default function Home() {
       <Projects />
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 bg-white dark:bg-gray-800">
+      <section id="experience" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">WORK EXPERIENCE</h2>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
@@ -246,7 +248,7 @@ export default function Home() {
       <Skills />
 
       {/* Leadership Section */}
-      <section id="leadership" className="py-20 bg-white dark:bg-gray-800 overflow-hidden">
+      <section id="leadership" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm overflow-hidden">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">LEADERSHIP & ACTIVITIES</h2>
           <div 
@@ -338,7 +340,7 @@ export default function Home() {
       </section>
 
       {/* Awards & Honors Section */}
-      <section id="awards" className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section id="awards" className="py-20 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">AWARDS & HONORS</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
@@ -362,7 +364,7 @@ export default function Home() {
       </section>
 
       {/* Training & Certification Section */}
-      <section id="certifications" className="py-20 bg-white dark:bg-gray-800">
+      <section id="certifications" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">TRAINING & CERTIFICATION</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-6 max-w-7xl mx-auto">
@@ -391,7 +393,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section id="contact" className="py-20 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
           <div className="max-w-xl mx-auto">
