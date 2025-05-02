@@ -20,21 +20,21 @@ export default function ParticlesBackground() {
             },
             particles: {
               color: {
-                value: "#4ade80",
+                value: "#4ade80", // Light green
               },
               links: {
-                color: "#86efac",
+                color: "#86efac", // Lighter green for links
                 distance: 150,
                 enable: true,
                 opacity: 0.4,
-                width: 2,
+                width: 1, // Reduced line width
               },
               move: {
                 enable: true,
-                speed: 3,
+                speed: 2, // Slightly slower movement
               },
               number: {
-                value: 100,
+                value: 60, // Reduced number of particles
               },
               opacity: {
                 value: 0.6,
@@ -43,7 +43,7 @@ export default function ParticlesBackground() {
                 type: "circle",
               },
               size: {
-                value: { min: 3, max: 8 },
+                value: { min: 1, max: 4 }, // Smaller particles
               },
             },
             interactivity: {
@@ -59,7 +59,7 @@ export default function ParticlesBackground() {
               },
               modes: {
                 push: {
-                  quantity: 6,
+                  quantity: 4, // Reduced number of particles added on click
                 },
                 repulse: {
                   distance: 200,
