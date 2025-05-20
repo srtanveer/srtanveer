@@ -185,7 +185,7 @@ function SectionTitle({ children, icon, accent }: { children: React.ReactNode; i
 
 function Card({ children }: { children: React.ReactNode }) {
   return (
-    <div className="bg-white/90 rounded-xl shadow p-4 md:p-6 text-gray-800 print:bg-white print:shadow-none print:rounded-none print:p-0">
+    <div className="bg-white/90 rounded-xl shadow p-4 md:p-6 text-gray-800 print:bg-white print:shadow-none print:rounded-none print:p-0 text-justify">
       {children}
     </div>
   );

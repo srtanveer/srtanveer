@@ -168,7 +168,7 @@ export default function Home() {
               <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-4">
                 Engineering Student | Computer Science
               </p>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
+              <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl text-justify">
                 To obtain a challenging role in the technology industry, where I can utilize my passion for learning about emerging technologies and apply my technical skills to create innovative solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
@@ -212,6 +212,24 @@ export default function Home() {
               <h3 className="text-lg lg:text-xl font-semibold">SSC in Science</h3>
               <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">A.K. High School and College</p>
               <p className="text-sm lg:text-base text-gray-500">Result: 4.56 (2018)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Research Section */}
+      <section id="research" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+        <div className="container">
+          <h2 className="text-3xl font-bold mb-12 text-center">RESEARCH</h2>
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+              <h3 className="text-xl font-semibold mb-2">Sarcasm Analysis (Ongoing Academic Thesis)</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                Supervised by Dr. Md. Saiful Azad, Dean FSE & Director IQAC, Green University of Bangladesh
+              </p>
+              <p className="text-gray-700 dark:text-gray-300 text-justify">
+                Sarcasm Analysis is a challenging area within Natural Language Processing (NLP) and Sentiment Analysis. It focuses on identifying instances where text uses positive language to convey a negative or mocking sentiment. This research explores techniques to accurately detect sarcasm, which is crucial for understanding the true intent behind online communications and improving applications like opinion mining and social media analysis.
+              </p>
             </div>
           </div>
         </div>

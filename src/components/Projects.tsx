@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaSearch, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -10,21 +11,24 @@ const projects = [
     description: "A platform supporting victims and families affected by the events of July 24, featuring donation system and victim tracking.",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     githubUrl: "https://github.com/idontbyte69/July-24",
-    liveUrl: "https://july24bd.vercel.app"
+    liveUrl: "https://july24bd.vercel.app",
+    image: "/july24bd.png"
   },
   {
     title: "Faijan Solution",
     description: "A comprehensive business website offering digital services including government documentation, computer solutions, and digital marketing.",
     technologies: ["HTML", "CSS", "JavaScript", "Web Development"],
     githubUrl: "https://github.com/idontbyte69/Faijan-Solution",
-    liveUrl: "https://faijansolutions.vercel.app"
+    liveUrl: "https://faijansolutions.vercel.app",
+    image: "/faijan solutions.png"
   },
   {
     title: "Perfect Pathway",
     description: "An interactive pathfinding simulation game with role selection and dynamic building navigation.",
     technologies: ["Python", "Algorithms", "Data Structures"],
     githubUrl: "https://github.com/idontbyte69/Perfect-Pathway",
-    liveUrl: "https://perfect-pathway.vercel.app"
+    liveUrl: "https://perfect-pathway.vercel.app",
+    image: "/Perfect Pathway.png"
   },
   {
     title: "Calculator for Everyone (Java)",
@@ -90,6 +94,16 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
             >
+              {project.image && (
+                <div className="relative w-full h-48">
+                  <Image 
+                    src={project.image} 
+                    alt={project.title} 
+                    fill 
+                    className="object-cover"
+                  />
+                </div>
+              )}
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
