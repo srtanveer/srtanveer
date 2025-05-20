@@ -179,7 +179,7 @@ export default function Home() {
                   Get in Touch
                 </a>
                 <a
-                  href="https://drive.google.com/file/d/1p0uKiSxEIuzWn5uq4-_j0atZ3O6YOWY9/view?usp=sharing"
+                  href="/resume"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block border-2 border-primary-600 dark:border-primary-500 text-primary-600 dark:text-primary-400 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-500 dark:hover:text-white font-medium py-3 px-8 rounded-lg transition-colors text-center"

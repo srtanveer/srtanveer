@@ -6,41 +6,44 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
+    title: "July-24",
+    description: "A platform supporting victims and families affected by the events of July 24, featuring donation system and victim tracking.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    githubUrl: "https://github.com/idontbyte69/July-24",
+    liveUrl: "https://july24bd.vercel.app"
+  },
+  {
+    title: "Faijan Solution",
+    description: "A comprehensive business website offering digital services including government documentation, computer solutions, and digital marketing.",
+    technologies: ["HTML", "CSS", "JavaScript", "Web Development"],
+    githubUrl: "https://github.com/idontbyte69/Faijan-Solution",
+    liveUrl: "https://faijansolutions.vercel.app"
+  },
+  {
+    title: "Perfect Pathway",
+    description: "An interactive pathfinding simulation game with role selection and dynamic building navigation.",
+    technologies: ["Python", "Algorithms", "Data Structures"],
+    githubUrl: "https://github.com/idontbyte69/Perfect-Pathway",
+    liveUrl: "https://perfect-pathway.vercel.app"
+  },
+  {
     title: "Calculator for Everyone (Java)",
-    description: "A comprehensive calculator application implemented in Java programming language.",
+    description: "A comprehensive calculator application implemented in Java programming language with full OOP implementation.",
     technologies: ["Java", "OOP", "GUI"],
     githubUrl: "https://github.com/idontbyte69/java-project---Calculator-for-everyone",
   },
   {
     title: "All-In-One Data Structures",
-    description: "A collection of common data structures implemented in C, serving as a learning resource.",
+    description: "A collection of common data structures implemented in C, serving as a learning resource for data structure concepts.",
     technologies: ["C", "Data Structures", "Algorithms"],
     githubUrl: "https://github.com/idontbyte69/All-In-One-Data-Structures-using-C",
   },
   {
     title: "Calculator for Everyone (C)",
-    description: "C implementation of the calculator project with core functionality.",
+    description: "C implementation of the calculator project with core functionality and efficient algorithms.",
     technologies: ["C", "Data Structures", "Algorithms"],
     githubUrl: "https://github.com/idontbyte69/calculator_for_everyone-using-C",
-  },
-  {
-    title: "Perfect Pathway",
-    description: "A Python-based project focused on pathfinding and algorithms.",
-    technologies: ["Python", "Algorithms", "Data Structures"],
-    githubUrl: "https://github.com/idontbyte69/Perfect-Pathway",
-  },
-  // {
-  //   title: "Sayed's Project",
-  //   description: "A Python-based project with various implementations.",
-  //   technologies: ["Python", "Programming"],
-  //   githubUrl: "https://github.com/idontbyte69/Sayed-s-Project",
-  // },
-  // {
-  //   title: "Web Programming Lab Reports",
-  //   description: "Collection of web programming laboratory assignments and reports.",
-  //   technologies: ["HTML", "CSS", "Web Development"],
-  //   githubUrl: "https://github.com/idontbyte69/Web-Porgramming-Lab-Reports",
-  // }
+  }
 ];
 
 export default function Projects() {
@@ -110,8 +113,19 @@ export default function Projects() {
                     className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
                   >
                     <FaGithub className="text-xl" />
-                    <span>View Project</span>
+                    <span>View Code</span>
                   </a>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
+                    >
+                      <FaExternalLinkAlt className="text-xl" />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

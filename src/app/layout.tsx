@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import ClientNavbarWrapper from "@/components/ClientNavbarWrapper";
 import '../lib/emailjs';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100`}>
-        <Navbar />
+        <ClientNavbarWrapper />
         <main className="min-h-screen">
           {children}
         </main>
