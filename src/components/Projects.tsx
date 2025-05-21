@@ -50,6 +50,8 @@ const projects = [
   }
 ];
 
+export { projects };
+
 export default function Projects() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showAll, setShowAll] = useState(false);

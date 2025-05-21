@@ -2,55 +2,45 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-const awards = [
+const certifications = [
   {
-    image: "/awards/best-project-award.jpeg",
-    title: "Best Project Award",
-    description: "Integrated Design Project Poster Presentation, Fall 2024 Dept of CSE, GUB"
+    image: "/awards/problem-solving-basic-hackerrank.png",
+    title: "HackerRank",
+    description: "Problem Solving (Basic) Certificate"
   },
   {
-    image: "/awards/sti-2024-volunteer.jpg",
-    title: "STI 2024",
-    description: "Volunteer Certificate"
+    image: "/awards/corporate-readiness-program-batch-3-by-utc-global-academy.jpeg",
+    title: "Corporate Readiness Program",
+    description: "Batch 3 By UTC Global Academy"
   },
   {
-    image: "/awards/icpc-2022-asia-dhaka-regional-site-online-preliminary-contest.png",
-    title: "ICPC 2022",
-    description: "Asia Dhaka Regional Site online Preliminary Contest"
+    image: "/awards/corporate-readiness-program-by-utc-global-academy.jpg",
+    title: "Corporate Readiness Program",
+    description: "By UTC Global Academy"
   },
   {
-    image: "/awards/executive-member-gucc-pc-2022-23.png",
-    title: "GUCC PC 2022-23",
-    description: "Executive Member Certificate"
+    image: "/awards/participation-on-workshop-on-python.png",
+    title: "Workshop on Python",
+    description: "Python Programming in a Pragmatic Approach"
   },
   {
-    image: "/awards/gub-cse-carnival-lead-volunteer.png",
-    title: "GUB CSE CARNIVAL",
-    description: "Lead Volunteer Certificate"
+    image: "/awards/participate-on-webinar-with-bongodev.png",
+    title: "Webinar Participation",
+    description: "Participated in Webinar with bongoDev"
   },
-  {
-    image: "/awards/volunteer-at-idgc-2025.png",
-    title: "IDGC 2025",
-    description: "Volunteer Certificate"
-  },
-  {
-    image: "/awards/organizer-at-idpc-spring-2024-organizer.png",
-    title: "IDPC Spring 2024",
-    description: "Organizer Certificate"
-  }
 ];
 
-export default function Awards() {
+export default function Certifications() {
   const [showAll, setShowAll] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
-  const [selectedAward, setSelectedAward] = useState<{ image: string; title: string; description: string } | null>(null);
+  const [selectedCert, setSelectedCert] = useState<{ image: string; title: string; description: string } | null>(null);
 
-  const handleCardClick = (award: { image: string; title: string; description: string }) => {
-    setSelectedAward(award);
+  const handleCardClick = (cert: { image: string; title: string; description: string }) => {
+    setSelectedCert(cert);
   };
 
   const handleCloseModal = () => {
-    setSelectedAward(null);
+    setSelectedCert(null);
   };
 
   useEffect(() => {
@@ -66,38 +56,38 @@ export default function Awards() {
   }, []);
 
   const initialLimit = windowWidth < 768 ? 2 : 3; // 2 for mobile/md, 3 for lg and up
-  const displayedAwards = showAll ? awards : awards.slice(0, initialLimit);
+  const displayedCertifications = showAll ? certifications : certifications.slice(0, initialLimit);
 
   return (
-    <section id="awards" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+    <section id="certifications" className="py-20 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
       <div className="container">
-        <h2 className="text-3xl font-bold mb-12 text-center">AWARDS & HONORS</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">TRAINING & CERTIFICATION</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {displayedAwards.map((award, index) => (
+          {displayedCertifications.map((cert, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
-              onClick={() => handleCardClick(award)}
+              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              onClick={() => handleCardClick(cert)}
             >
               <div className="relative h-72 w-full bg-white">
                 <Image
-                  src={award.image}
-                  alt={award.title}
+                  src={cert.image}
+                  alt={cert.title}
                   fill
                   className="object-contain"
                 />
               </div>
               <div className="p-4">
-                <h3 className="text-lg font-semibold mb-2">{award.title}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{award.description}</p>
+                <h3 className="text-lg font-semibold mb-2">{cert.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{cert.description}</p>
               </div>
             </motion.div>
           ))}
         </div>
-        {!showAll && awards.length > initialLimit && (
+        {!showAll && certifications.length > initialLimit && (
           <div className="text-center mt-8">
             <button
               onClick={() => setShowAll(true)}
@@ -110,20 +100,20 @@ export default function Awards() {
       </div>
 
       <AnimatePresence>
-        {selectedAward && (
+        {selectedCert && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
-            onClick={handleCloseModal} // Close modal on clicking overlay
+            onClick={handleCloseModal}
           >
             <motion.div
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
               className="relative bg-white dark:bg-gray-800 rounded-lg p-6 max-w-full max-h-full overflow-auto text-center"
-              onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside modal content
+              onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={handleCloseModal}
@@ -134,21 +124,19 @@ export default function Awards() {
               </button>
               <div className="relative w-full h-auto max-h-[80vh] mb-4">
                 <Image
-                  src={selectedAward.image}
-                  alt={selectedAward.title}
-                  width={800} // Set a reasonable max width for the popup image
-                  height={600} // Height will adjust based on aspect ratio
+                  src={selectedCert.image}
+                  alt={selectedCert.title}
+                  width={800}
+                  height={600}
                   className="object-contain mx-auto"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{selectedAward.title}</h3>
-              <p className="text-gray-700 dark:text-gray-300">{selectedAward.description}</p>
+              <h3 className="text-xl font-semibold mb-2">{selectedCert.title}</h3>
+              <p className="text-gray-700 dark:text-gray-300">{selectedCert.description}</p>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
     </section>
   );
-}
-
-export { awards }; 
+} 

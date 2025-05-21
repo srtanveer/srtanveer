@@ -2,6 +2,23 @@
 
 import Image from 'next/image';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGlobe, FaMapMarkerAlt, FaAward, FaUserGraduate, FaBriefcase, FaProjectDiagram, FaLanguage, FaCertificate, FaStar } from 'react-icons/fa';
+import { projects } from '../../components/Projects';
+import { awards } from '../../components/Awards';
+
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+  image?: string;
+}
+
+interface Award {
+  image: string;
+  title: string;
+  description: string;
+}
 
 export default function Resume() {
   return (
@@ -77,10 +94,14 @@ export default function Resume() {
           {/* Projects */}
           <SectionTitle icon={<FaProjectDiagram className="text-green-500" />}>Projects</SectionTitle>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <ProjectCard title="Website for Faijan Solution" tech="Web Development" desc="Business website for Faijan Solution." />
-            <ProjectCard title="Perfect Pathway" tech="Python" desc="Algorithm course project. Path finding game." />
-            <ProjectCard title="Calculator For Everyone" tech="Java" desc="OOP course project. Full OOP implementation." />
-            <ProjectCard title="All In One Data Structures" tech="C" desc="Data Structure course project. Learning program." />
+            {projects.map((project: Project, index: number) => (
+              <ProjectCard
+                key={index}
+                title={project.title}
+                tech={project.technologies.join(', ')}
+                desc={project.description}
+              />
+            ))}
           </div>
 
           {/* Education */}
@@ -121,9 +142,11 @@ export default function Resume() {
           <SectionTitle icon={<FaAward className="text-pink-500" />}>Awards & Honors</SectionTitle>
           <Card>
             <ul className="list-disc pl-6 space-y-1">
-              <li><span className="font-semibold">Best Project</span>, Integrated Design Project Poster Presentation, Fall 2024 Dept of CSE, GUB</li>
-              <li>The most active <span className="font-semibold">Volunteer</span> in the Cholera Campaign, 2022</li>
-              <li>Runner up in <span className="font-semibold">Web Development</span>, Notre Dame Science Festival, 2017</li>
+              {awards.map((award: Award, index: number) => (
+                <li key={index}>
+                  <span className="font-semibold">{award.title}</span>, {award.description}
+                </li>
+              ))}
             </ul>
           </Card>
 
@@ -150,7 +173,11 @@ export default function Resume() {
           <SectionTitle icon={<FaCertificate className="text-indigo-500" />}>Training & Certification</SectionTitle>
           <Card>
             <ul className="list-disc pl-6 space-y-1">
-              <li><span className="font-semibold">Workshop on Python Programming in a Pragmatic Approach</span>, organized by Green University Computer Club, 2022</li>
+              <li><span className="font-semibold">HackerRank</span>, Problem Solving (Basic) Certificate</li>
+              <li><span className="font-semibold">Corporate Readiness Program</span>, Batch 3 By UTC Global Academy</li>
+              <li><span className="font-semibold">Corporate Readiness Program</span>, By UTC Global Academy</li>
+              <li><span className="font-semibold">Workshop on Python</span>, Python Programming in a Pragmatic Approach</li>
+              <li><span className="font-semibold">Webinar Participation</span>, Participated in Webinar with bongoDev</li>
               <li><span className="font-semibold">Cholera Vaccination</span>, organized by icddr,b, 2022</li>
               <li><span className="font-semibold">JavaScript Algorithms and Data Structures</span>, issued by freeCodeCamp on July, 2020</li>
               <li><span className="font-semibold">Responsive Web Design</span>, issued by freeCodeCamp on June, 2020</li>

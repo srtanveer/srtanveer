@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Awards from '@/components/Awards';
+import Certifications from '@/components/Certifications';
 import emailjs from '@emailjs/browser';
 import ParticlesBackground from '@/components/ParticlesBackground';
 
@@ -239,10 +240,7 @@ export default function Home() {
       {/* Projects Section */}
       <Projects />
 
-      {/* Awards Section */}
-      <Awards />
-
-      {/* Experience Section */}
+      
       <section id="experience" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">WORK EXPERIENCE</h2>
@@ -361,29 +359,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Awards & Honors Section */}
-      <section id="awards" className="py-20 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
-        <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">AWARDS & HONORS</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">Best Project</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Integrated Design Project Poster Presentation</p>
-              <p className="text-sm lg:text-base text-gray-500">Fall 2024 Dept of CSE, GUB</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">Most Active Volunteer</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Cholera Campaign</p>
-              <p className="text-sm lg:text-base text-gray-500">2022</p>
-            </div>
-            <div className="bg-white dark:bg-gray-800 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">Runner up in Web Development</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Notre Dame Science Festival</p>
-              <p className="text-sm lg:text-base text-gray-500">2017</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
+      {/* Awards Section */}
+      <Awards />
+
+      {/* Training & Certification Section (with Images) */}
+      <Certifications />
+
+      {/* Experience Section */}
 
       {/* Training & Certification Section */}
       <section id="certifications" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
