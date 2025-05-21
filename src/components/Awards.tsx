@@ -4,62 +4,62 @@ import { useState, useEffect } from 'react';
 
 const awards = [
   {
-    image: "/awards & Honors/Best Project Award.jpeg",
+    image: "/awards/best-project-award.jpeg",
     title: "Best Project Award",
     description: "Integrated Design Project Poster Presentation, Fall 2024 Dept of CSE, GUB"
   },
   {
-    image: "/awards & Honors/STI 2024 Volunteer .jpg",
+    image: "/awards/sti-2024-volunteer.jpg",
     title: "STI 2024",
     description: "Volunteer Certificate"
   },
   {
-    image: "/awards & Honors/Problem solving (Basic)Hackerrank .png",
+    image: "/awards/problem-solving-basic-hackerrank.png",
     title: "HackerRank",
     description: "Problem Solving (Basic) Certificate"
   },
   {
-    image: "/awards & Honors/ICPC 2022 Asia Dhaka Regional Site online Preliminary Contest.png",
+    image: "/awards/icpc-2022-asia-dhaka-regional-site-online-preliminary-contest.png",
     title: "ICPC 2022",
     description: "Asia Dhaka Regional Site online Preliminary Contest"
   },
   {
-    image: "/awards & Honors/Corporate Readiness Program Batch 3 By UTC Global Academy.jpeg",
+    image: "/awards/corporate-readiness-program-batch-3-by-utc-global-academy.jpeg",
     title: "Corporate Readiness Program",
     description: "Batch 3 By UTC Global Academy"
   },
   {
-    image: "/awards & Honors/Corporate Readiness Program By UTC Global Academy.jpg",
+    image: "/awards/corporate-readiness-program-by-utc-global-academy.jpg",
     title: "Corporate Readiness Program",
     description: "By UTC Global Academy"
   },
   {
-    image: "/awards & Honors/Participation on Workshop on python.png",
+    image: "/awards/participation-on-workshop-on-python.png",
     title: "Python Workshop",
     description: "Workshop Participation Certificate"
   },
   {
-    image: "/awards & Honors/Participate on Webinar with bongoDev.png",
+    image: "/awards/participate-on-webinar-with-bongodev.png",
     title: "Webinar Participation",
     description: "Participated in Webinar with bongoDev"
   },
   {
-    image: "/awards & Honors/Executive Member GUCC PC 2022-23.png",
+    image: "/awards/executive-member-gucc-pc-2022-23.png",
     title: "GUCC PC 2022-23",
     description: "Executive Member Certificate"
   },
   {
-    image: "/awards & Honors/GUB CSE CARNIVAL LEAD VOLUNEER.png",
+    image: "/awards/gub-cse-carnival-lead-volunteer.png",
     title: "GUB CSE CARNIVAL",
     description: "Lead Volunteer Certificate"
   },
   {
-    image: "/awards & Honors/Volunteer at IDGC 2025.png",
+    image: "/awards/volunteer-at-idgc-2025.png",
     title: "IDGC 2025",
     description: "Volunteer Certificate"
   },
   {
-    image: "/awards & Honors/Organizer at IDPC Spring 2024 Organizer.png",
+    image: "/awards/organizer-at-idpc-spring-2024-organizer.png",
     title: "IDPC Spring 2024",
     description: "Organizer Certificate"
   }
