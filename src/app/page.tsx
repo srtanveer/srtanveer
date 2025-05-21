@@ -5,6 +5,7 @@ import { FormEvent, useState, useEffect } from 'react';
 import Image from 'next/image';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
+import Awards from '@/components/Awards';
 import emailjs from '@emailjs/browser';
 import ParticlesBackground from '@/components/ParticlesBackground';
 
@@ -237,6 +238,9 @@ export default function Home() {
 
       {/* Projects Section */}
       <Projects />
+
+      {/* Awards Section */}
+      <Awards />
 
       {/* Experience Section */}
       <section id="experience" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
