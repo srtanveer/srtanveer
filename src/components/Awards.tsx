@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const awards = [
   {
@@ -69,10 +70,10 @@ export default function Awards() {
   const displayedAwards = showAll ? awards : awards.slice(0, initialLimit);
 
   return (
-    <section id="awards" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+    <section id="awards" className="py-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
       <div className="container">
         <h2 className="text-3xl font-bold mb-12 text-center">AWARDS & HONORS</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-6 max-w-7xl mx-auto">
           {displayedAwards.map((award, index) => (
             <motion.div
               key={index}
@@ -97,13 +98,14 @@ export default function Awards() {
             </motion.div>
           ))}
         </div>
-        {!showAll && awards.length > initialLimit && (
+        {awards.length > initialLimit && (
           <div className="text-center mt-8">
             <button
-              onClick={() => setShowAll(true)}
-              className="inline-block bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-8 rounded-lg transition-colors"
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-8 rounded-lg transition-colors"
             >
-              See More
+              <span>{showAll ? 'Show Less' : 'Show More'}</span>
+              {showAll ? <FaChevronUp /> : <FaChevronDown />}
             </button>
           </div>
         )}

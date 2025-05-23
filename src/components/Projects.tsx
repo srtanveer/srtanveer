@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaSearch, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 const projects = [
   {
@@ -55,6 +56,7 @@ export { projects };
 export default function Projects() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showAll, setShowAll] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   
   const filteredProjects = projects.filter(project =>
     project.technologies.some(tech =>
@@ -63,10 +65,23 @@ export default function Projects() {
   );
 
   // Show first 3 projects by default instead of random selection
-  const displayedProjects = searchQuery ? filteredProjects : (showAll ? projects : projects.slice(0, 3));
+  const initialLimit = windowWidth < 768 ? 2 : 3; // Show 2 for mobile, 3 for larger screens
+  const displayedProjects = searchQuery ? filteredProjects : (showAll ? projects : projects.slice(0, initialLimit));
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="projects" className="py-12 bg-gray-50 dark:bg-gray-900">
       <div className="container">
         <h2 className="text-3xl font-bold mb-12 text-center">PROJECTS</h2>
         
@@ -87,7 +102,7 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {displayedProjects.map((project, index) => (
             <motion.div
               key={project.title}

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 const certifications = [
   {
@@ -59,10 +60,10 @@ export default function Certifications() {
   const displayedCertifications = showAll ? certifications : certifications.slice(0, initialLimit);
 
   return (
-    <section id="certifications" className="py-20 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
+    <section id="certifications" className="py-12 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
       <div className="container">
         <h2 className="text-3xl font-bold mb-12 text-center">TRAINING & CERTIFICATION</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-6 max-w-7xl mx-auto">
           {displayedCertifications.map((cert, index) => (
             <motion.div
               key={index}
@@ -87,13 +88,14 @@ export default function Certifications() {
             </motion.div>
           ))}
         </div>
-        {!showAll && certifications.length > initialLimit && (
+        {certifications.length > initialLimit && (
           <div className="text-center mt-8">
             <button
-              onClick={() => setShowAll(true)}
-              className="inline-block bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-8 rounded-lg transition-colors"
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-8 rounded-lg transition-colors"
             >
-              See More
+              <span>{showAll ? 'Show Less' : 'Show More'}</span>
+              {showAll ? <FaChevronUp /> : <FaChevronDown />}
             </button>
           </div>
         )}

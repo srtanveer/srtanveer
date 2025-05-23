@@ -199,7 +199,7 @@ export default function Home() {
       <section id="about" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">EDUCATION</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 lg:grid-cols-3 gap-1 lg:gap-6 max-w-7xl mx-auto">
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
               <h3 className="text-lg lg:text-xl font-semibold">B.Sc. in Computer Science and Engineering (CSE)</h3>
               <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University of Bangladesh</p>
@@ -244,7 +244,7 @@ export default function Home() {
       <section id="experience" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">WORK EXPERIENCE</h2>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 lg:grid-cols-3 gap-1 lg:gap-6 max-w-7xl mx-auto">
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
               <h3 className="text-lg lg:text-xl font-semibold">Computer Operator</h3>
               <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Faijan Solutions</p>
@@ -327,7 +327,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
+                className="grid grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6 lg:gap-8"
               >
                 {visibleCards().map((card, index) => (
                   <motion.div
@@ -369,7 +369,7 @@ export default function Home() {
       {/* Experience Section */}
 
       {/* Training & Certification Section */}
-      <section id="certifications" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+      {/* <section id="certifications" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">TRAINING & CERTIFICATION</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 lg:gap-6 max-w-7xl mx-auto">
@@ -395,7 +395,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
