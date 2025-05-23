@@ -33,7 +33,7 @@ const certifications = [
 
 export default function Certifications() {
   const [showAll, setShowAll] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(1024); // Default to desktop width
   const [selectedCert, setSelectedCert] = useState<{ image: string; title: string; description: string } | null>(null);
 
   const handleCardClick = (cert: { image: string; title: string; description: string }) => {

@@ -56,7 +56,7 @@ export { projects };
 export default function Projects() {
   const [searchQuery, setSearchQuery] = useState('');
   const [showAll, setShowAll] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(1024); // Default to desktop width
   
   const filteredProjects = projects.filter(project =>
     project.technologies.some(tech =>
@@ -72,6 +72,9 @@ export default function Projects() {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
+
+    // Set initial width
+    handleResize();
 
     window.addEventListener('resize', handleResize);
 

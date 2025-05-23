@@ -43,7 +43,7 @@ const awards = [
 
 export default function Awards() {
   const [showAll, setShowAll] = useState(false);
-  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(1024); // Default to desktop width
   const [selectedAward, setSelectedAward] = useState<{ image: string; title: string; description: string } | null>(null);
 
   const handleCardClick = (award: { image: string; title: string; description: string }) => {
