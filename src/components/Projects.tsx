@@ -105,48 +105,48 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-4">
           {displayedProjects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden p-4 sm:p-5 md:p-6"
             >
               {project.image && (
-                <div className="relative w-full h-48">
+                <div className="relative w-full h-40 sm:h-48 md:h-56">
                   <Image 
                     src={project.image} 
                     alt={project.title} 
                     fill 
-                    className="object-cover"
+                    className="object-cover rounded-t-lg"
                   />
                 </div>
               )}
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4 text-justify">
+              <div className="pt-4">
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400 mb-4 text-justify">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm"
+                      className="px-2 py-0.5 sm:px-3 sm:py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs sm:text-sm"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 flex-wrap">
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
+                    className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-xs sm:text-sm"
                   >
-                    <FaGithub className="text-xl" />
+                    <FaGithub className="text-base sm:text-xl" />
                     <span>View Code</span>
                   </a>
                   {project.liveUrl && (
@@ -154,9 +154,9 @@ export default function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
+                      className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 text-xs sm:text-sm"
                     >
-                      <FaExternalLinkAlt className="text-xl" />
+                      <FaExternalLinkAlt className="text-base sm:text-xl" />
                       <span>Live Demo</span>
                     </a>
                   )}

@@ -9,6 +9,8 @@ import Awards from '@/components/Awards';
 import Certifications from '@/components/Certifications';
 import emailjs from '@emailjs/browser';
 import ParticlesBackground from '@/components/ParticlesBackground';
+import { differenceInMonths, parse } from 'date-fns';
+import { FaChevronUp, FaChevronDown } from 'react-icons/fa';
 
 export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -98,6 +100,7 @@ export default function Home() {
   const [isHovered, setIsHovered] = useState(false);
   const [windowWidth, setWindowWidth] = useState(1024);
   const [isMounted, setIsMounted] = useState(false);
+  const [showAllLeadership, setShowAllLeadership] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
@@ -138,6 +141,29 @@ export default function Home() {
   const handleNextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % leadershipCards.length);
   };
+
+  // Helper to calculate duration in months/years
+  function getDuration(start: string, end: string) {
+    const parseDate = (str: string) => {
+      // Handles 'Month, Year' or 'Present'
+      if (str.toLowerCase().includes('present')) return new Date();
+      const [month, year] = str.replace(/\(.*\)/, '').split(',').map(s => s.trim());
+      if (!month || !year) return null;
+      return new Date(`${month} 1, ${year}`);
+    };
+    const startDate = parseDate(start);
+    const endDate = parseDate(end);
+    if (!startDate || !endDate) return '';
+    let months = (endDate.getFullYear() - startDate.getFullYear()) * 12 + (endDate.getMonth() - startDate.getMonth());
+    if (months < 0) months = 0;
+    const years = Math.floor(months / 12);
+    const remMonths = months % 12;
+    let result = '';
+    if (years > 0) result += `${years} yr${years > 1 ? 's' : ''}`;
+    if (remMonths > 0) result += (years > 0 ? ' ' : '') + `${remMonths} mo${remMonths > 1 ? 's' : ''}`;
+    if (!result) result = 'Less than a month';
+    return result;
+  }
 
   return (
     <div className="pt-16">
@@ -199,21 +225,21 @@ export default function Home() {
       <section id="about" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">EDUCATION</h2>
-          <div className="grid grid-cols-3 lg:grid-cols-3 gap-1 lg:gap-6 max-w-7xl mx-auto">
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">B.Sc. in Computer Science and Engineering (CSE)</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Green University of Bangladesh</p>
-              <p className="text-sm lg:text-base text-gray-500">Expected Graduation: 2026</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 max-w-7xl mx-auto">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold">B.Sc. in Computer Science and Engineering (CSE)</h3>
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Green University of Bangladesh</p>
+              <p className="text-xs sm:text-sm md:text-base text-gray-500">Expected Graduation: 2026</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">HSC in Science</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Adamjeenagar MW College</p>
-              <p className="text-sm lg:text-base text-gray-500">Result: 4.83 (2020)</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold">HSC in Science</h3>
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Adamjeenagar MW College</p>
+              <p className="text-xs sm:text-sm md:text-base text-gray-500">Result: 4.83 (2020)</p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">SSC in Science</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">A.K. High School and College</p>
-              <p className="text-sm lg:text-base text-gray-500">Result: 4.56 (2018)</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold">SSC in Science</h3>
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">A.K. High School and College</p>
+              <p className="text-xs sm:text-sm md:text-base text-gray-500">Result: 4.56 (2018)</p>
             </div>
           </div>
         </div>
@@ -225,11 +251,11 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-12 text-center">RESEARCH</h2>
           <div className="max-w-3xl mx-auto">
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">Sarcasm Analysis (Ongoing Academic Thesis)</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold">Sarcasm Analysis (Ongoing Academic Thesis)</h3>
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400">
                 Supervised by Dr. Md. Saiful Azad, Dean FSE & Director IQAC, Green University of Bangladesh
               </p>
-              <p className="text-gray-700 dark:text-gray-300 text-justify">
+              <p className="text-sm text-gray-700 dark:text-gray-300 text-justify">
                 Sarcasm Analysis is a challenging area within Natural Language Processing (NLP) and Sentiment Analysis. It focuses on identifying instances where text uses positive language to convey a negative or mocking sentiment. This research explores techniques to accurately detect sarcasm, which is crucial for understanding the true intent behind online communications and improving applications like opinion mining and social media analysis.
               </p>
             </div>
@@ -244,21 +270,21 @@ export default function Home() {
       <section id="experience" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">WORK EXPERIENCE</h2>
-          <div className="grid grid-cols-3 lg:grid-cols-3 gap-1 lg:gap-6 max-w-7xl mx-auto">
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">Computer Operator</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Faijan Solutions</p>
-              <p className="text-sm lg:text-base text-gray-500">August, 2020 to Present (Self-Employed)</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 max-w-7xl mx-auto">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold">Computer Operator</h3>
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Faijan Solutions</p>
+              <p className="text-xs sm:text-sm md:text-base text-gray-500">August, 2020 to Present (Self-Employed)<br /><span className='italic text-[11px] sm:text-xs'>({getDuration('August, 2020', 'Present')})</span></p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">Data Entry Specialist & Web Service Management Officer</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">Rang Bangladesh Ltd.</p>
-              <p className="text-sm lg:text-base text-gray-500">February, 2023 to May, 2023 (Contractual)</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold">Data Entry Specialist & Web Service Management Officer</h3>
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Rang Bangladesh Ltd.</p>
+              <p className="text-xs sm:text-sm md:text-base text-gray-500">February, 2023 to May, 2023 (Contractual)<br /><span className='italic text-[11px] sm:text-xs'>({getDuration('February, 2023', 'May, 2023')})</span></p>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 lg:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg lg:text-xl font-semibold">Data Entry Specialist</h3>
-              <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300">UpWork</p>
-              <p className="text-sm lg:text-base text-gray-500">April, 2018 to February, 2023 (Freelancing)</p>
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-base sm:text-lg md:text-xl font-semibold">Data Entry Specialist</h3>
+              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">UpWork</p>
+              <p className="text-xs sm:text-sm md:text-base text-gray-500">April, 2018 to February, 2023 (Freelancing)<br /><span className='italic text-[11px] sm:text-xs'>({getDuration('April, 2018', 'February, 2023')})</span></p>
             </div>
           </div>
         </div>
@@ -271,71 +297,13 @@ export default function Home() {
       <section id="leadership" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm overflow-hidden">
         <div className="container">
           <h2 className="text-3xl font-bold mb-12 text-center">LEADERSHIP & ACTIVITIES</h2>
-          <div 
-            className="relative max-w-7xl mx-auto"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {/* Left Arrow */}
-            <button
-              onClick={handlePrevSlide}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-10 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 backdrop-blur-sm"
-              aria-label="Previous slide"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-6 h-6 text-gray-800 dark:text-white"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 19.5L8.25 12l7.5-7.5"
-                />
-              </svg>
-            </button>
-
-            {/* Right Arrow */}
-            <button
-              onClick={handleNextSlide}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-10 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 backdrop-blur-sm"
-              aria-label="Next slide"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-6 h-6 text-gray-800 dark:text-white"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 4.5l7.5 7.5-7.5 7.5"
-                />
-              </svg>
-            </button>
-
-            <AnimatePresence mode="wait">
-              <motion.div 
-                key={currentIndex}
-                initial={{ opacity: 0, x: 100 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="grid grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6 lg:gap-8"
-              >
-                {visibleCards().map((card, index) => (
-                  <motion.div
-                    key={`${currentIndex}-${index}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.3 }}
-                    className={`bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col ${index >= (windowWidth < 1024 ? 2 : 3) ? 'hidden' : ''}`}
+          <div className="relative max-w-7xl mx-auto">
+            {showAllLeadership ? (
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6 lg:gap-8">
+                {leadershipCards.map((card, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
                   >
                     <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
                       <Image
@@ -351,10 +319,101 @@ export default function Home() {
                       <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">{card.organization}</p>
                       <p className="text-sm md:text-base text-gray-500">{card.description}</p>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
-            </AnimatePresence>
+              </div>
+            ) : (
+              <>
+                {/* Left Arrow */}
+                <button
+                  onClick={handlePrevSlide}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-10 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 backdrop-blur-sm"
+                  aria-label="Previous slide"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-6 h-6 text-gray-800 dark:text-white"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 19.5L8.25 12l7.5-7.5"
+                    />
+                  </svg>
+                </button>
+                {/* Right Arrow */}
+                <button
+                  onClick={handleNextSlide}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-10 bg-white/80 dark:bg-gray-800/80 p-2 rounded-full shadow-lg hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 backdrop-blur-sm"
+                  aria-label="Next slide"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-6 h-6 text-gray-800 dark:text-white"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                    />
+                  </svg>
+                </button>
+                <AnimatePresence mode="wait">
+                  <motion.div 
+                    key={currentIndex}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -100 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                    className="grid grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6 lg:gap-8"
+                  >
+                    {visibleCards().map((card, index) => (
+                      <motion.div
+                        key={`${currentIndex}-${index}`}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: index * 0.3 }}
+                        className={`bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col ${index >= (windowWidth < 1024 ? 2 : 3) ? 'hidden' : ''}`}
+                      >
+                        <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
+                          <Image
+                            src={card.image}
+                            alt={card.alt}
+                            fill
+                            className="object-contain bg-[#1e293b] p-2"
+                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                          />
+                        </div>
+                        <div className="p-4 md:p-6 bg-gray-50 dark:bg-gray-700 flex-1">
+                          <h3 className="text-lg md:text-xl font-semibold mb-2">{card.title}</h3>
+                          <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-1">{card.organization}</p>
+                          <p className="text-sm md:text-base text-gray-500">{card.description}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                </AnimatePresence>
+              </>
+            )}
+            {leadershipCards.length > (windowWidth < 1024 ? 2 : 3) && (
+              <div className="text-center mt-8">
+                <button
+                  onClick={() => setShowAllLeadership(!showAllLeadership)}
+                  className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 text-white font-medium py-3 px-8 rounded-lg transition-colors"
+                >
+                  <span>{showAllLeadership ? 'Show Less' : 'Show More'}</span>
+                  {showAllLeadership ? <FaChevronUp /> : <FaChevronDown />}
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </section>
