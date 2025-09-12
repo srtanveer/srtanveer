@@ -8,6 +8,14 @@ import { useEffect } from 'react';
 
 const projects = [
   {
+    title: "Hack The AI - Inter University Hackathon",
+    description: "Official event website for Hack The AI, featuring registration, timeline, prizes, categories, organizers, and FAQs.",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    githubUrl: "https://github.com/idontbyte69/hacktheai-website",
+    liveUrl: "https://hacktheai.smythos.com/",
+    image: "/hacktheai.png"
+  },
+  {
     title: "July-24",
     description: "A platform supporting victims and families affected by the events of July 24, featuring donation system and victim tracking.",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
