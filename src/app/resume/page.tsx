@@ -160,7 +160,7 @@ export default function Resume() {
                   <li>Policy Making</li>
                 </ul>
               </li>
-              <li><span className="font-semibold">Intern Data Collector</span> at <a href="https://www.gub.edu.bd/center-for-international-affairs" className="text-blue-600 underline">Green University Center for International Affairs – GCIA</a>
+              <li><span className="font-semibold">Intern Data Collector</span> at <a href="https://www.gub.edu.bd/center-for-international-affairs" className="text-blue-600 underline">Green University Center for International Affairs (GCIA)</a>
                 <ul className="list-disc pl-6">
                   <li>Collecting data of Foreign Universities</li>
                   <li>Organizing MOU between different universities from different countries</li>
