@@ -16,6 +16,14 @@ const projects = [
     image: "/hacktheai.png"
   },
   {
+    title: "Green University Computer Club (GUCC) Website",
+    description: "Contributed project with GUCC developers. Next.js site for events, contests, executives, and community updates.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    githubUrl: "https://github.com/GreenUniversityComputerClub/gucc",
+    liveUrl: "https://gucc.green.edu.bd/",
+    image: "/gucc-website.png"
+  },
+  {
     title: "July-24",
     description: "A platform supporting victims and families affected by the events of July 24, featuring donation system and victim tracking.",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
