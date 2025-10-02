@@ -194,7 +194,7 @@ export default function Home() {
                 Hi, I'm <span className="text-primary-600 dark:text-primary-400">MD SHOWAIB RAHMAN TANVEER</span>
               </h1>
               <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-4">
-                Engineering Student | Computer Science
+                Engineering Student | Frontend Developer | Tech Enthusiast
               </p>
               <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl text-justify">
                 To obtain a challenging role in the technology industry, where I can utilize my passion for learning about emerging technologies and apply my technical skills to create innovative solutions.
@@ -222,35 +222,79 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+      <section id="about" className="py-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">EDUCATION</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 max-w-7xl mx-auto">
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold">B.Sc. in Computer Science and Engineering (CSE)</h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Green University of Bangladesh</p>
-              <p className="text-xs sm:text-sm md:text-base text-gray-500">Expected Graduation: 2026</p>
-            </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold">HSC in Science</h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Adamjeenagar MW College</p>
-              <p className="text-xs sm:text-sm md:text-base text-gray-500">Result: 4.83 (2020)</p>
-            </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold">SSC in Science</h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">A.K. High School and College</p>
-              <p className="text-xs sm:text-sm md:text-base text-gray-500">Result: 4.56 (2018)</p>
+          <h2 className="text-3xl font-bold mb-8 text-center">EDUCATION</h2>
+          <div className="max-w-4xl mx-auto">
+            {/* Timeline */}
+            <div className="relative">
+              {/* Vertical Line */}
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500"></div>
+              
+              {/* Timeline Items */}
+              <div className="space-y-6">
+                {/* B.Sc. in CSE */}
+                <div className="relative pl-20">
+                  <div className="absolute left-5 top-2 w-6 h-6 bg-indigo-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                  <div className="bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-4 hover:shadow-xl hover:scale-[1.35] transition-all duration-300 border-l-4 border-indigo-500">
+                    <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-white">B.Sc. in Computer Science and Engineering (CSE)</h3>
+                        <p className="text-base font-semibold text-indigo-600 dark:text-indigo-400 mt-1">Green University of Bangladesh</p>
+                      </div>
+                      <span className="px-3 py-1 text-xs font-semibold bg-indigo-500 text-white rounded-full">Ongoing</span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                      <p className="font-medium">Expected Graduation: 2026</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* HSC in Science */}
+                <div className="relative pl-20">
+                  <div className="absolute left-5 top-2 w-6 h-6 bg-purple-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                  <div className="bg-gradient-to-br from-purple-50 to-violet-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-4 hover:shadow-xl hover:scale-[1.35] transition-all duration-300 border-l-4 border-purple-500">
+                    <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-white">HSC in Science</h3>
+                        <p className="text-base font-semibold text-purple-600 dark:text-purple-400 mt-1">Adamjeenagar MW College</p>
+                      </div>
+                      <span className="px-3 py-1 text-xs font-semibold bg-purple-500 text-white rounded-full">GPA 4.83 out of 5.00</span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                      <p className="font-medium">Year: 2020</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* SSC in Science */}
+                <div className="relative pl-20">
+                  <div className="absolute left-5 top-2 w-6 h-6 bg-pink-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                  <div className="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-4 hover:shadow-xl hover:scale-[1.35] transition-all duration-300 border-l-4 border-pink-500">
+                    <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-white">SSC in Science</h3>
+                        <p className="text-base font-semibold text-pink-600 dark:text-pink-400 mt-1">A.K. High School and College</p>
+                      </div>
+                      <span className="px-3 py-1 text-xs font-semibold bg-pink-500 text-white rounded-full">GPA 4.56 out of 5.00</span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                      <p className="font-medium">Year: 2018</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Research Section */}
-      <section id="research" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+      <section id="research" className="py-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">RESEARCH</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">RESEARCH</h2>
           <div className="max-w-3xl mx-auto">
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 shadow-lg">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 shadow-lg hover:shadow-2xl hover:scale-[1.35] transition-all duration-300">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold">Sarcasm Analysis (Ongoing Academic Thesis)</h3>
               <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400">
                 Supervised by Dr. Md. Saiful Azad, Dean FSE & Director IQAC, Green University of Bangladesh
@@ -267,24 +311,93 @@ export default function Home() {
       <Projects />
 
       
-      <section id="experience" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+      <section id="experience" className="py-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">WORK EXPERIENCE</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 max-w-7xl mx-auto">
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold">Computer Operator</h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Faijan Solutions</p>
-              <p className="text-xs sm:text-sm md:text-base text-gray-500">August, 2020 to Present (Self-Employed)<br /><span className='italic text-[11px] sm:text-xs'>({getDuration('August, 2020', 'Present')})</span></p>
-            </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold">Data Entry Specialist & Web Service Management Officer</h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">Rang Bangladesh Ltd.</p>
-              <p className="text-xs sm:text-sm md:text-base text-gray-500">February, 2023 to May, 2023 (Contractual)<br /><span className='italic text-[11px] sm:text-xs'>({getDuration('February, 2023', 'May, 2023')})</span></p>
-            </div>
-            <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 sm:p-5 md:p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold">Data Entry Specialist</h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-300">UpWork</p>
-              <p className="text-xs sm:text-sm md:text-base text-gray-500">April, 2018 to February, 2023 (Freelancing)<br /><span className='italic text-[11px] sm:text-xs'>({getDuration('April, 2018', 'February, 2023')})</span></p>
+          <h2 className="text-3xl font-bold mb-8 text-center">WORK EXPERIENCE</h2>
+          <div className="max-w-4xl mx-auto">
+            {/* Timeline */}
+            <div className="relative">
+              {/* Vertical Line */}
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-green-500 via-purple-500 to-orange-500"></div>
+              
+              {/* Timeline Items */}
+              <div className="space-y-6">
+                {/* Frontend Developer Intern */}
+                <div className="relative pl-20">
+                  <div className="absolute left-5 top-2 w-6 h-6 bg-blue-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                  <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-4 hover:shadow-xl hover:scale-[1.35] transition-all duration-300 border-l-4 border-blue-500">
+                    <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-white">Frontend Developer</h3>
+                        <p className="text-base font-semibold text-blue-600 dark:text-blue-400 mt-1">Digi5 Ltd</p>
+                      </div>
+                      <span className="px-3 py-1 text-xs font-semibold bg-blue-500 text-white rounded-full">Internship</span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                      <p className="font-medium">October, 2025 - Present</p>
+                      <span className="hidden sm:inline">•</span>
+                      <p className="italic text-gray-500 dark:text-gray-400">({getDuration('October, 2025', 'Present')})</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Computer Operator */}
+                <div className="relative pl-20">
+                  <div className="absolute left-5 top-2 w-6 h-6 bg-green-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-4 hover:shadow-xl hover:scale-[1.35] transition-all duration-300 border-l-4 border-green-500">
+                    <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-white">Computer Operator</h3>
+                        <p className="text-base font-semibold text-green-600 dark:text-green-400 mt-1">Faijan Solutions</p>
+                      </div>
+                      <span className="px-3 py-1 text-xs font-semibold bg-green-500 text-white rounded-full">Self-Employed</span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                      <p className="font-medium">August, 2020 - Present</p>
+                      <span className="hidden sm:inline">•</span>
+                      <p className="italic text-gray-500 dark:text-gray-400">({getDuration('August, 2020', 'Present')})</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Data Entry Specialist & Web Service Management Officer */}
+                <div className="relative pl-20">
+                  <div className="absolute left-5 top-2 w-6 h-6 bg-purple-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                  <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-4 hover:shadow-xl hover:scale-[1.35] transition-all duration-300 border-l-4 border-purple-500">
+                    <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-white">Data Entry Specialist & Web Service Management Officer</h3>
+                        <p className="text-base font-semibold text-purple-600 dark:text-purple-400 mt-1">Rang Bangladesh Ltd.</p>
+                      </div>
+                      <span className="px-3 py-1 text-xs font-semibold bg-purple-500 text-white rounded-full">Contractual</span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                      <p className="font-medium">February, 2023 - May, 2023</p>
+                      <span className="hidden sm:inline">•</span>
+                      <p className="italic text-gray-500 dark:text-gray-400">({getDuration('February, 2023', 'May, 2023')})</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Data Entry Specialist */}
+                <div className="relative pl-20">
+                  <div className="absolute left-5 top-2 w-6 h-6 bg-orange-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                  <div className="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-gray-700 dark:to-gray-600 rounded-xl p-4 hover:shadow-xl hover:scale-[1.35] transition-all duration-300 border-l-4 border-orange-500">
+                    <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-white">Data Entry Specialist</h3>
+                        <p className="text-base font-semibold text-orange-600 dark:text-orange-400 mt-1">UpWork</p>
+                      </div>
+                      <span className="px-3 py-1 text-xs font-semibold bg-orange-500 text-white rounded-full">Freelance</span>
+                    </div>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                      <p className="font-medium">April, 2018 - February, 2023</p>
+                      <span className="hidden sm:inline">•</span>
+                      <p className="italic text-gray-500 dark:text-gray-400">({getDuration('April, 2018', 'February, 2023')})</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -294,16 +407,16 @@ export default function Home() {
       <Skills />
 
       {/* Leadership Section */}
-      <section id="leadership" className="py-20 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm overflow-hidden">
+      <section id="leadership" className="py-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm overflow-hidden">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">LEADERSHIP & ACTIVITIES</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">LEADERSHIP & ACTIVITIES</h2>
           <div className="relative max-w-7xl mx-auto">
             {showAllLeadership ? (
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 md:gap-6 lg:gap-8">
                 {leadershipCards.map((card, index) => (
                   <div
                     key={index}
-                    className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
+                    className="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl hover:scale-[1.35] transition-all duration-300 flex flex-col"
                   >
                     <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
                       <Image
@@ -381,7 +494,7 @@ export default function Home() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: index * 0.3 }}
-                        className={`bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col ${index >= (windowWidth < 1024 ? 2 : 3) ? 'hidden' : ''}`}
+                        className={`bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden hover:shadow-xl hover:scale-[1.35] transition-all duration-300 flex flex-col ${index >= (windowWidth < 1024 ? 2 : 3) ? 'hidden' : ''}`}
                       >
                         <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] w-full">
                           <Image
@@ -457,9 +570,9 @@ export default function Home() {
       </section> */}
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
+      <section id="contact" className="py-12 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-12 text-center">Get in Touch</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Get in Touch</h2>
           <div className="max-w-xl mx-auto">
             <div className="text-center mb-8">
               <p className="text-gray-600 dark:text-gray-300 mb-4">

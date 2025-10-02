@@ -60,9 +60,9 @@ export default function Certifications() {
   const displayedCertifications = showAll ? certifications : certifications.slice(0, initialLimit);
 
   return (
-    <section id="certifications" className="py-12 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
+    <section id="certifications" className="py-8 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-sm">
       <div className="container">
-        <h2 className="text-3xl font-bold mb-12 text-center">TRAINING & CERTIFICATION</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">TRAINING & CERTIFICATION</h2>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-6 max-w-7xl mx-auto">
           {displayedCertifications.map((cert, index) => (
             <motion.div
@@ -70,7 +70,7 @@ export default function Certifications() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden hover:shadow-xl hover:scale-[1.35] transition-all duration-300 cursor-pointer"
               onClick={() => handleCardClick(cert)}
             >
               <div className="relative h-72 w-full bg-white">

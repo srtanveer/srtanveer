@@ -72,6 +72,12 @@ export default function Resume() {
           <SectionTitle icon={<FaBriefcase className="text-blue-500" />}>Work Experience</SectionTitle>
           <div className="flex flex-col gap-4">
             <TimelineItem
+              title="Frontend Developer"
+              subtitle="Digi5 Ltd"
+              period="Oct 2025 – Present"
+              badge="Internship"
+            />
+            <TimelineItem
               title="Computer Operator"
               subtitle="Faijan Solutions, Dhaka"
               period="Aug 2020 – Present"

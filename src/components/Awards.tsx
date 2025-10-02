@@ -70,9 +70,9 @@ export default function Awards() {
   const displayedAwards = showAll ? awards : awards.slice(0, initialLimit);
 
   return (
-    <section id="awards" className="py-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+    <section id="awards" className="py-8 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
       <div className="container">
-        <h2 className="text-3xl font-bold mb-12 text-center">AWARDS & HONORS</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">AWARDS & HONORS</h2>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 lg:gap-6 max-w-7xl mx-auto">
           {displayedAwards.map((award, index) => (
             <motion.div
@@ -80,7 +80,7 @@ export default function Awards() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              className="bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden hover:shadow-xl hover:scale-[1.35] transition-all duration-300 cursor-pointer"
               onClick={() => handleCardClick(award)}
             >
               <div className="relative h-72 w-full bg-white">

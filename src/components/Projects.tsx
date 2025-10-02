@@ -100,12 +100,12 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-12 bg-gray-50 dark:bg-gray-900">
+    <section id="projects" className="py-8 bg-gray-50 dark:bg-gray-900">
       <div className="container">
-        <h2 className="text-3xl font-bold mb-12 text-center">PROJECTS</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">PROJECTS</h2>
         
         {/* Search Bar */}
-        <div className="max-w-md mx-auto mb-12 relative">
+        <div className="max-w-md mx-auto mb-8 relative">
           <div className="relative">
             <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             <input
@@ -128,7 +128,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden p-4 sm:p-5 md:p-6"
+              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden p-4 sm:p-5 md:p-6 hover:shadow-2xl hover:scale-[1.35] transition-all duration-300"
             >
               {project.image && (
                 <div className="relative w-full h-40 sm:h-48 md:h-56">
