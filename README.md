@@ -11,8 +11,8 @@
 <!-- About Me -->
 ## 👨‍💻 About Me
 - 🔭 I’m currently pursuing my BSc in CSE from Bangladesh**  
-- 📫 How to reach me: [**SR TANVEER**(Website)](https://srtanveer.vercel.app/)  
-- 🚀 All my projects are available at [**GitHub**](https://github.com/idontbyte69)  
+- 📫 How to reach me: [**SR TANVEER**(Website)](https://srtanveer.dev)  
+- 🚀 All my projects are available at [**GitHub**](https://github.com/srtanveer)  
 
 ---
 
@@ -22,10 +22,10 @@
   <a href="https://linkedin.com/in/srtanveer" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
-  <a href="https://fb.com/tanveer.vaiya01" target="_blank">
+  <a href="https://fb.com/tanveerr" target="_blank">
     <img src="https://img.shields.io/badge/Facebook-%231877F2?style=for-the-badge&logo=facebook&logoColor=white" />
   </a>
-  <a href="https://instagram.com/i_dont_byte" target="_blank">
+  <a href="https://instagram.com/tanveerr" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
   </a>
 </p>
@@ -43,9 +43,9 @@
 <!-- GitHub Stats with Circular Design -->
 ## 📊 GitHub Stats  
 <div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=idontbyte69&theme=radical" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=srtanveer9&theme=radical" />
 <!--   <img src="https://github-readme-streak-stats.herokuapp.com/?user=idontbyte69&theme=radical&hide_border=true" alt="GitHub Streak" /> -->
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=idontbyte69&theme=radical" />
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=srtanveer&theme=radical" />
 </div>
 
 ---
