@@ -9,7 +9,7 @@
 </p> -->
 
 <!-- About Me -->
-- 🔭 I’m currently pursuing my BSc in CSE from Bangladesh**  
+- 🔭 I’m currently pursuing my BSc in CSE from Bangladesh
 - 📫 Reach me here: [**SR TANVEER**(Website)](https://srtanveer.dev)  
 - 🚀 All my projects are available at [**GitHub**](https://github.com/srtanveer)  
 
